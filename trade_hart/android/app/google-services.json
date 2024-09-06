@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "897647377174",
+    "project_id": "tradehart-f5f44",
+    "storage_bucket": "tradehart-f5f44.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897647377174:android:efe42c5c3b3af39f922e37",
+        "android_client_info": {
+          "package_name": "com.tradhart.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "897647377174-huqtcgeodtapnfadtptu139ae9kjfvuf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tradhart.app",
+            "certificate_hash": "268d6040a425129d5e2c238aa22c4ed93f5531be"
+          }
+        },
+        {
+          "client_id": "897647377174-b3ql080vsrjo2s3v9jv117eavo8hjpkf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZrxiP-YdgMCDMcdG6UdyAGD29V1X6WXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "897647377174-b3ql080vsrjo2s3v9jv117eavo8hjpkf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "897647377174-h906fdvk523a59nf5jd3002om51jovs6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tradeHart"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

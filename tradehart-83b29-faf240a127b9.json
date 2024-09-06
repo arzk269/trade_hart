@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "tradehart-83b29",
+  "private_key_id": "faf240a127b92dadf9c6007a9c1c5a38f604d4db",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDFiBmNNJq9YMsl\n5rbpL8uhcoJF8lDvvPB0ouyEXhJeRbAvjyEiH9KBAoQ3jzfvLJZOYUEWuwKX7C71\no6oSD5PAgXBSY0/usH8mwtiPUCQzbekOjTt5/j0FZk2P6Rhdi3k4IqJY9xH7jYUa\nYa2LVspOLmekolCTuChZkM8TL87r73w9L6YQRMovjsDiiwq/BAvZGaoTQeDpfmtQ\nn4oUuBPq5CYpaT67VvtJZLNJTWV0GGssgV/CX14J9sv4ejsyuvaZ6DrprJ8YzxEB\nr4X0VZ1eBdpPbBZQpRdUz0NfxRFuM6y8PxHlGij8SilSylkQUlft1shSCLT+35/1\ngxF1ocohAgMBAAECggEACLx4uNSLRXXq9i2qiEyrWmQYm+RYLQozrkzoXgBVGqNF\nZA0V/47dvgPw+g4VALh9m1DU0p8JwdNZzlZjNrJGrBxtbc9joSBgN0Ql1MzMFRQ2\n2wRnDYGvjDYWlxdNkxGQlml9uaaPvornSJ/qT3/SqbuGrPLa0nWyHyf26JfUNH4K\nkPNMa/yzdW+Mg6Z0XytllWtRpbeTApWosW3WCE+BhZBuQqa+/5lMfzI7c/npo7Cu\ntIwhZ+V76YI685bL2xn1guWZOM3zFwo08jzprOY/xX70zgFP5j0cnGeMgoMGtdjO\nyLVuL+rzFAe9qZQJTB1UN3ABFKkOMBcef3MzanRveQKBgQD0BriOMAD62kZb1K6L\nyJVXIugs1O1/T88QImZZ0TGhALGZyIcagvPaszbVugDSjkFaA4WLcRJ1Ozp3DP/L\niG6+c4LPKBXOrSdn+zgBn5+t9FfQWueRmQUgGtUhCSK+6x7cwQgVkmInhRj+q0Uo\nlP1jE6c6vCYl/EePMF5lMGgi9QKBgQDPOVj8pdRPCLUULZ2b689lSF/Di1OQ+IcD\nSvgv8RLZzaEvxByveQ52b4SsIB05J29BGTBL5w8whnnfjnQrlA6a5/y/2M1zSVDX\nZiGtEE/z8JIlmmta78vf88qf7SF8V+9Dow0KxvAXGy1Ov+xywPZVt607pxh+Ch5O\ndOK1Zd+G/QKBgQDcgjpBWkV4aMeNcdmsPLweek+dO2fFVIQCy2L7pJqZJ3xVP6w+\nG7lplepmJWda3OtXALmrcKjCQJwrOhbnf8i61ryMn2ddVIC4aH2KkgiD87lqcMqy\nebj08upGqO+539MKnm/Etnt1xML6Vh/vdPqnjfnejGhYiOjNDmMuQxjHBQKBgQCq\nImxkKgZwyTZalcUUEfxaLJyrYIXAvbujwXaZbfVLK1/OZtYiX2K3bIHiDA/SMAVQ\nzkxv1QoMjiwblsrcSJfhKNzD6k1r/OLJpom5nG34WyiyhODlbYHWokNXIIrgmxXP\nU1xO39yZK+/7+uk3oiPdZottMZiTSt1tDtxfkH+ARQKBgEO/BGpzRnLjQ30+J+gs\nJyAPsiy36dXvInyacEZF1WKfU+9JQ9Rk/gXESHM5bNUnhCy95FhqPXXfZiSEj2q7\nbTRW1mgyXKCsVBe9txabw+U+S9Z32ScL/8lb21YOf52S5TOxFzfCDe7whens/VdO\nhGNTl1fkzgtQINqbfmdnEEDY\n-----END PRIVATE KEY-----\n",
+  "client_email": "tradehart-83b29@tradehart-83b29.iam.gserviceaccount.com",
+  "client_id": "100820477326603286667",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/tradehart-83b29%40tradehart-83b29.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
