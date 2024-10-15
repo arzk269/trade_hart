@@ -61,26 +61,26 @@ Future<void> generateAndAddPayments() async {
 
 class AppColors {
   static Color primary = contentColorCyan;
-  static Color menuBackground = Color(0xFF090912);
-  static Color itemsBackground = Color(0xFF1B2339);
-  static Color pageBackground = Color(0xFF282E45);
+  static Color menuBackground = const Color(0xFF090912);
+  static Color itemsBackground = const Color(0xFF1B2339);
+  static Color pageBackground = const Color(0xFF282E45);
   static Color mainTextColor1 = Colors.white;
   static Color mainTextColor2 = Colors.white70;
   static Color mainTextColor3 = Colors.white38;
   static Color mainGridLineColor = Colors.white10;
   static Color borderColor = Colors.white54;
-  static Color gridLinesColor = Color(0x11FFFFFF);
+  static Color gridLinesColor = const Color(0x11FFFFFF);
 
   static Color contentColorBlack = Colors.black;
   static Color contentColorWhite = Colors.white;
-  static Color contentColorBlue = Color(0xFF2196F3);
-  static Color contentColorYellow = Color(0xFFFFC300);
-  static Color contentColorOrange = Color(0xFFFF683B);
-  static Color contentColorGreen = Color(0xFF3BFF49);
-  static Color contentColorPurple = Color(0xFF6E1BFF);
-  static Color contentColorPink = Color(0xFFFF3AF2);
-  static Color contentColorRed = Color(0xFFE80054);
-  static Color contentColorCyan = Color(0xFF50E4FF);
+  static Color contentColorBlue = const Color(0xFF2196F3);
+  static Color contentColorYellow = const Color(0xFFFFC300);
+  static Color contentColorOrange = const Color(0xFFFF683B);
+  static Color contentColorGreen = const Color(0xFF3BFF49);
+  static Color contentColorPurple = const Color(0xFF6E1BFF);
+  static Color contentColorPink = const Color(0xFFFF3AF2);
+  static Color contentColorRed = const Color(0xFFE80054);
+  static Color contentColorCyan = const Color(0xFF50E4FF);
 }
 
 String getDayOfWeek(int dayIndex) {
@@ -190,7 +190,7 @@ List<DateTime> getSevenLastDays() {
 }
 
 class StatsPage extends StatefulWidget {
-  StatsPage({super.key});
+  const StatsPage({super.key});
 
   @override
   State<StatsPage> createState() => _StatsPageState();
@@ -248,7 +248,7 @@ class _StatsPageState extends State<StatsPage> {
           "transfert id": transfertId
         });
 
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           content: Text("Transaction effectuée avec succès!",
               style: TextStyle(color: Colors.white)),
           backgroundColor: Colors.green,
@@ -259,7 +259,7 @@ class _StatsPageState extends State<StatsPage> {
         });
         print('Transfer created successfully: ${responseData['transferId']}');
       } else {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           content: Text("Une erreur s'est produite! Veuillez réessayer",
               style: TextStyle(color: Colors.white)),
           backgroundColor: Colors.red,
@@ -285,9 +285,9 @@ class _StatsPageState extends State<StatsPage> {
   Query<Map<String, dynamic>> getPaymentsStream(String status, int timeArea) {
     DateTime now = DateTime.now();
     DateTime startDate = timeArea == 0
-        ? now.subtract(Duration(days: 7))
+        ? now.subtract(const Duration(days: 7))
         : timeArea == 1
-            ? now.subtract(Duration(days: 28))
+            ? now.subtract(const Duration(days: 28))
             : timeArea == 2
                 ? DateTime(now.year, now.month - 6, now.day)
                 : DateTime(now.year, now.month - 12, now.day);
@@ -338,13 +338,13 @@ class _StatsPageState extends State<StatsPage> {
   ];
 
   List<Color> gradientColors2 = [
-    Color.fromARGB(255, 80, 255, 168),
+    const Color.fromARGB(255, 80, 255, 168),
     AppColors.contentColorGreen,
   ];
 
   List<Color> gradientColorsAnnule = [
-    Color.fromARGB(69, 255, 105, 59),
-    Color.fromARGB(45, 232, 0, 85)
+    const Color.fromARGB(69, 255, 105, 59),
+    const Color.fromARGB(45, 232, 0, 85)
   ];
 
   @override
@@ -358,7 +358,7 @@ class _StatsPageState extends State<StatsPage> {
               SizedBox(
                 width: manageWidth(context, 10),
               ),
-              MainBackButton()
+              const MainBackButton()
             ],
           ),
           SizedBox(
@@ -380,7 +380,7 @@ class _StatsPageState extends State<StatsPage> {
                         });
                         navScrollController.animateTo(
                           navScrollController.position.minScrollExtent,
-                          duration: Duration(milliseconds: 100),
+                          duration: const Duration(milliseconds: 100),
                           curve: Curves.decelerate,
                         );
                       },
@@ -400,7 +400,7 @@ class _StatsPageState extends State<StatsPage> {
                           borderRadius: BorderRadius.circular(2.5),
                           color: navIndex != 0
                               ? Colors.transparent
-                              : Color.fromARGB(200, 87, 199, 197)),
+                              : const Color.fromARGB(200, 87, 199, 197)),
                     )
                   ],
                 ),
@@ -414,7 +414,7 @@ class _StatsPageState extends State<StatsPage> {
                         });
                         navScrollController.animateTo(
                           navScrollController.position.maxScrollExtent,
-                          duration: Duration(milliseconds: 500),
+                          duration: const Duration(milliseconds: 500),
                           curve: Curves.easeInOut,
                         );
                       },
@@ -434,7 +434,7 @@ class _StatsPageState extends State<StatsPage> {
                           borderRadius: BorderRadius.circular(2.5),
                           color: navIndex != 1
                               ? Colors.transparent
-                              : Color.fromARGB(200, 87, 199, 197)),
+                              : const Color.fromARGB(200, 87, 199, 197)),
                     )
                   ],
                 ),
@@ -448,7 +448,7 @@ class _StatsPageState extends State<StatsPage> {
                         });
                         navScrollController.animateTo(
                           navScrollController.position.maxScrollExtent,
-                          duration: Duration(milliseconds: 500),
+                          duration: const Duration(milliseconds: 500),
                           curve: Curves.easeInOut,
                         );
                       },
@@ -468,7 +468,7 @@ class _StatsPageState extends State<StatsPage> {
                           borderRadius: BorderRadius.circular(2.5),
                           color: navIndex != 2
                               ? Colors.transparent
-                              : Color.fromARGB(200, 87, 199, 197)),
+                              : const Color.fromARGB(200, 87, 199, 197)),
                     )
                   ],
                 ),
@@ -490,7 +490,7 @@ class _StatsPageState extends State<StatsPage> {
                             });
                             scrollController.animateTo(
                               scrollController.position.minScrollExtent,
-                              duration: Duration(milliseconds: 500),
+                              duration: const Duration(milliseconds: 500),
                               curve: Curves.easeInOut,
                             );
                           },
@@ -510,7 +510,7 @@ class _StatsPageState extends State<StatsPage> {
                             });
                             scrollController.animateTo(
                               scrollController.position.minScrollExtent,
-                              duration: Duration(milliseconds: 500),
+                              duration: const Duration(milliseconds: 500),
                               curve: Curves.easeInOut,
                             );
                           },
@@ -531,7 +531,7 @@ class _StatsPageState extends State<StatsPage> {
 
                             scrollController.animateTo(
                               scrollController.position.maxScrollExtent,
-                              duration: Duration(milliseconds: 500),
+                              duration: const Duration(milliseconds: 500),
                               curve: Curves.easeInOut,
                             );
                           },
@@ -551,7 +551,7 @@ class _StatsPageState extends State<StatsPage> {
                             });
                             scrollController.animateTo(
                               scrollController.position.maxScrollExtent,
-                              duration: Duration(milliseconds: 500),
+                              duration: const Duration(milliseconds: 500),
                               curve: Curves.easeInOut,
                             );
                           },
@@ -587,7 +587,7 @@ class _StatsPageState extends State<StatsPage> {
                             SizedBox(
                               height: manageHeight(context, 350),
                             ),
-                            Center(child: CircularProgressIndicator()),
+                            const Center(child: CircularProgressIndicator()),
                           ],
                         );
                       } else if (!snapshot.hasData ||
@@ -605,7 +605,7 @@ class _StatsPageState extends State<StatsPage> {
                                   padding: EdgeInsets.only(
                                       right: manageWidth(context, 40)),
                                   child: DropdownButton(
-                                    items: [
+                                    items: const [
                                       DropdownMenuItem(
                                         child: Text("Toutes"),
                                         value: "Toutes",
@@ -683,20 +683,20 @@ class _StatsPageState extends State<StatsPage> {
                                       (element.data()["time"] as Timestamp)
                                           .toDate()
                                           .isBefore(DateTime.now()
-                                              .subtract(Duration(days: 7)))) ||
+                                              .subtract(const Duration(days: 7)))) ||
                                   (!element.data()["buyer confirmation status"] &&
                                       element.data()[
                                           "seller confirmation status"] &&
                                       (element.data()["time"] as Timestamp)
                                           .toDate()
                                           .isBefore(DateTime.now()
-                                              .subtract(Duration(days: 11))) &&
+                                              .subtract(const Duration(days: 11))) &&
                                       (element.data()["seller confirmation date"] as Timestamp)
                                           .toDate()
-                                          .isBefore(DateTime.now().subtract(Duration(days: 3)))))
+                                          .isBefore(DateTime.now().subtract(const Duration(days: 3)))))
                               .toList()
                           : status == "En cours de traitement"
-                              ? snapshot.data!.docs.where((element) => (element.data()["time"] as Timestamp).toDate().isAfter(DateTime.now().subtract(Duration(days: 7))) || !((element.data()["buyer confirmation status"] && element.data()["seller confirmation status"] && (element.data()["time"] as Timestamp).toDate().isBefore(DateTime.now().subtract(Duration(days: 7)))) || (!element.data()["buyer confirmation status"] && element.data()["seller confirmation status"] && (element.data()["time"] as Timestamp).toDate().isBefore(DateTime.now().subtract(Duration(days: 11)))))).toList()
+                              ? snapshot.data!.docs.where((element) => (element.data()["time"] as Timestamp).toDate().isAfter(DateTime.now().subtract(const Duration(days: 7))) || !((element.data()["buyer confirmation status"] && element.data()["seller confirmation status"] && (element.data()["time"] as Timestamp).toDate().isBefore(DateTime.now().subtract(const Duration(days: 7)))) || (!element.data()["buyer confirmation status"] && element.data()["seller confirmation status"] && (element.data()["time"] as Timestamp).toDate().isBefore(DateTime.now().subtract(const Duration(days: 11)))))).toList()
                               : snapshot.data!.docs;
 
                       List<double> results = days.map((e) => 0.0).toList();
@@ -762,7 +762,7 @@ class _StatsPageState extends State<StatsPage> {
                                   padding: EdgeInsets.only(
                                       right: manageWidth(context, 40)),
                                   child: DropdownButton(
-                                    items: [
+                                    items: const [
                                       DropdownMenuItem(
                                         child: Text("Toutes"),
                                         value: "Toutes",
@@ -832,9 +832,9 @@ class _StatsPageState extends State<StatsPage> {
                                   15,
                                 )),
                                 Padding(
-                                  padding: EdgeInsets.only(right: 40),
+                                  padding: const EdgeInsets.only(right: 40),
                                   child: DropdownButton(
-                                    items: [
+                                    items: const [
                                       DropdownMenuItem(
                                         child: Text("Toutes"),
                                         value: "Toutes",
@@ -905,7 +905,7 @@ class _StatsPageState extends State<StatsPage> {
                                     15,
                                   )),
                                   DropdownButton(
-                                    items: [
+                                    items: const [
                                       DropdownMenuItem(
                                         child: Text("Date"),
                                         value: "Date",
@@ -929,7 +929,7 @@ class _StatsPageState extends State<StatsPage> {
                                 child: ListView(
                               children: data
                                   .map((element) => Container(
-                                        padding: EdgeInsets.all(10),
+                                        padding: const EdgeInsets.all(10),
                                         child: Column(
                                           children: [
                                             Row(
@@ -954,7 +954,7 @@ class _StatsPageState extends State<StatsPage> {
                                                             ((element.data()["buyer confirmation status"] &&
                                                                     element.data()[
                                                                         "seller confirmation status"] &&
-                                                                    (element.data()["time"] as Timestamp).toDate().isBefore(DateTime.now().subtract(Duration(
+                                                                    (element.data()["time"] as Timestamp).toDate().isBefore(DateTime.now().subtract(const Duration(
                                                                         days:
                                                                             7)))) ||
                                                                 (!element.data()["buyer confirmation status"] &&
@@ -962,8 +962,8 @@ class _StatsPageState extends State<StatsPage> {
                                                                         "seller confirmation status"] &&
                                                                     (element.data()["time"] as Timestamp)
                                                                         .toDate()
-                                                                        .isBefore(DateTime.now().subtract(Duration(days: 11))) &&
-                                                                    (element.data()["seller confirmation date"] as Timestamp).toDate().isBefore(DateTime.now().subtract(Duration(days: 3)))))
+                                                                        .isBefore(DateTime.now().subtract(const Duration(days: 11))) &&
+                                                                    (element.data()["seller confirmation date"] as Timestamp).toDate().isBefore(DateTime.now().subtract(const Duration(days: 3)))))
                                                         ? "Disponible"
                                                         : element.data()["status"],
                                                     style: GoogleFonts.poppins(color: element.data()["status"] == "Annulé" ? Colors.red : Colors.grey.shade800, fontSize: manageWidth(context, 14), fontWeight: FontWeight.w500)),
@@ -976,13 +976,13 @@ class _StatsPageState extends State<StatsPage> {
                                                                 ((element.data()["buyer confirmation status"] &&
                                                                         element.data()[
                                                                             "seller confirmation status"] &&
-                                                                        (element.data()["time"] as Timestamp).toDate().isBefore(DateTime.now().subtract(Duration(
+                                                                        (element.data()["time"] as Timestamp).toDate().isBefore(DateTime.now().subtract(const Duration(
                                                                             days:
                                                                                 7)))) ||
                                                                     (!element.data()["buyer confirmation status"] &&
                                                                         element.data()["seller confirmation status"] &&
-                                                                        (element.data()["time"] as Timestamp).toDate().isBefore(DateTime.now().subtract(Duration(days: 11))) &&
-                                                                        (element.data()["seller confirmation date"] as Timestamp).toDate().isBefore(DateTime.now().subtract(Duration(days: 3)))))
+                                                                        (element.data()["time"] as Timestamp).toDate().isBefore(DateTime.now().subtract(const Duration(days: 11))) &&
+                                                                        (element.data()["seller confirmation date"] as Timestamp).toDate().isBefore(DateTime.now().subtract(const Duration(days: 3)))))
                                                             ? TextButton(
                                                                 onPressed: () {
                                                                   createTransfer(
@@ -1002,7 +1002,7 @@ class _StatsPageState extends State<StatsPage> {
                                                                           14),
                                                                     )))
                                                             : Padding(
-                                                                padding: EdgeInsets
+                                                                padding: const EdgeInsets
                                                                     .only(
                                                                         left:
                                                                             15),
@@ -1123,9 +1123,9 @@ class _StatsPageState extends State<StatsPage> {
                                 15,
                               )),
                               Padding(
-                                padding: EdgeInsets.only(right: 40),
+                                padding: const EdgeInsets.only(right: 40),
                                 child: DropdownButton(
-                                  items: [
+                                  items: const [
                                     DropdownMenuItem(
                                       child: Text("Toutes"),
                                       value: "Toutes",
@@ -1165,7 +1165,7 @@ class _StatsPageState extends State<StatsPage> {
                             ],
                           ),
                           Padding(
-                            padding: EdgeInsets.all(15),
+                            padding: const EdgeInsets.all(15),
                             child: Text(
                               "Total : $totalResult \$",
                               style: GoogleFonts.poppins(
@@ -1178,10 +1178,10 @@ class _StatsPageState extends State<StatsPage> {
                             height: manageHeight(context, 15),
                           ),
                           Container(
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
                             height: manageHeight(context, 300),
                             width: manageWidth(context, 350),
-                            margin: EdgeInsets.symmetric(horizontal: 10),
+                            margin: const EdgeInsets.symmetric(horizontal: 10),
                             decoration: BoxDecoration(
                                 boxShadow: [
                                   BoxShadow(
@@ -1202,7 +1202,7 @@ class _StatsPageState extends State<StatsPage> {
                                       verticalInterval: 1,
                                       getDrawingHorizontalLine: (value) {
                                         return FlLine(
-                                          color: Color.fromARGB(45, 44, 37, 37),
+                                          color: const Color.fromARGB(45, 44, 37, 37),
                                           strokeWidth:
                                               manageWidth(context, 0.5),
                                         );
@@ -1210,11 +1210,11 @@ class _StatsPageState extends State<StatsPage> {
                                     ),
                                     titlesData: FlTitlesData(
                                       show: true,
-                                      rightTitles: AxisTitles(
+                                      rightTitles: const AxisTitles(
                                         sideTitles:
                                             SideTitles(showTitles: false),
                                       ),
-                                      topTitles: AxisTitles(
+                                      topTitles: const AxisTitles(
                                         sideTitles:
                                             SideTitles(showTitles: false),
                                       ),
@@ -1272,7 +1272,7 @@ class _StatsPageState extends State<StatsPage> {
                                                     textAlign: TextAlign.left);
                                               }
 
-                                              return SizedBox();
+                                              return const SizedBox();
                                             },
                                             reservedSize:
                                                 manageWidth(context, 30)),
@@ -1281,7 +1281,7 @@ class _StatsPageState extends State<StatsPage> {
                                     borderData: FlBorderData(
                                       show: false,
                                       border:
-                                          Border.all(color: Color(0xff37434d)),
+                                          Border.all(color: const Color(0xff37434d)),
                                     ),
                                     minX: 0.0,
                                     maxX: days.length * 1.0 - 1,
@@ -1300,7 +1300,7 @@ class _StatsPageState extends State<StatsPage> {
                                               ),
                                         barWidth: manageWidth(context, 1.5),
                                         isStrokeCapRound: true,
-                                        dotData: FlDotData(
+                                        dotData: const FlDotData(
                                           show: false,
                                         ),
                                         belowBarData: BarAreaData(
@@ -1340,7 +1340,7 @@ class _StatsPageState extends State<StatsPage> {
                                               timeArea > 1
                                                   ? '${getMonthOfYear(date.month)} ${date.year}\n${spot.y} \$'
                                                   : '${formatDate(date)} ${date.year}\n${spot.y} \$',
-                                              TextStyle(color: Colors.white),
+                                              const TextStyle(color: Colors.white),
                                             );
                                           }).toList();
                                         },
@@ -1360,9 +1360,9 @@ class _StatsPageState extends State<StatsPage> {
                                 15,
                               )),
                               Padding(
-                                padding: EdgeInsets.only(right: 40),
+                                padding: const EdgeInsets.only(right: 40),
                                 child: DropdownButton(
-                                  items: [
+                                  items: const [
                                     DropdownMenuItem(
                                       child: Text("Toutes"),
                                       value: "Toutes",
@@ -1404,7 +1404,7 @@ class _StatsPageState extends State<StatsPage> {
                             ],
                           ),
                           Padding(
-                            padding: EdgeInsets.all(15),
+                            padding: const EdgeInsets.all(15),
                             child: Text(
                               totalSells > 1
                                   ? "Total : ${totalSells.toInt()} ventes"
@@ -1419,10 +1419,10 @@ class _StatsPageState extends State<StatsPage> {
                             height: manageHeight(context, 15),
                           ),
                           Container(
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
                             height: manageHeight(context, 300),
                             width: manageWidth(context, 350),
-                            margin: EdgeInsets.symmetric(horizontal: 10),
+                            margin: const EdgeInsets.symmetric(horizontal: 10),
                             decoration: BoxDecoration(
                                 boxShadow: [
                                   BoxShadow(
@@ -1442,17 +1442,17 @@ class _StatsPageState extends State<StatsPage> {
                                     verticalInterval: 1,
                                     getDrawingHorizontalLine: (value) {
                                       return FlLine(
-                                        color: Color.fromARGB(45, 44, 37, 37),
+                                        color: const Color.fromARGB(45, 44, 37, 37),
                                         strokeWidth: manageWidth(context, 0.5),
                                       );
                                     },
                                   ),
                                   titlesData: FlTitlesData(
                                     show: true,
-                                    rightTitles: AxisTitles(
+                                    rightTitles: const AxisTitles(
                                       sideTitles: SideTitles(showTitles: false),
                                     ),
-                                    topTitles: AxisTitles(
+                                    topTitles: const AxisTitles(
                                       sideTitles: SideTitles(showTitles: false),
                                     ),
                                     bottomTitles: AxisTitles(
@@ -1507,7 +1507,7 @@ class _StatsPageState extends State<StatsPage> {
                                                 textAlign: TextAlign.left);
                                           }
 
-                                          return SizedBox();
+                                          return const SizedBox();
                                         },
                                         reservedSize: manageWidth(context, 30),
                                       ),
@@ -1516,7 +1516,7 @@ class _StatsPageState extends State<StatsPage> {
                                   borderData: FlBorderData(
                                     show: false,
                                     border:
-                                        Border.all(color: Color(0xff37434d)),
+                                        Border.all(color: const Color(0xff37434d)),
                                   ),
                                   minX: 0.0,
                                   maxX: sells.length * 1.0 - 1,
@@ -1535,7 +1535,7 @@ class _StatsPageState extends State<StatsPage> {
                                             ),
                                       barWidth: manageWidth(context, 1.5),
                                       isStrokeCapRound: true,
-                                      dotData: FlDotData(
+                                      dotData: const FlDotData(
                                         show: false,
                                       ),
                                       belowBarData: BarAreaData(
@@ -1575,7 +1575,7 @@ class _StatsPageState extends State<StatsPage> {
                                             timeArea > 1
                                                 ? '${getMonthOfYear(date.month)} ${date.year}\n${spot.y.toInt()} ventes'
                                                 : '${formatDate(date)} ${date.year}\n${spot.y.toInt()} ventes',
-                                            TextStyle(color: Colors.white),
+                                            const TextStyle(color: Colors.white),
                                           );
                                         }).toList();
                                       },
@@ -1623,7 +1623,7 @@ class _StatsPageState extends State<StatsPage> {
                         ),
                   style: style,
                 )
-              : SizedBox(),
+              : const SizedBox(),
         );
 
       case 2:

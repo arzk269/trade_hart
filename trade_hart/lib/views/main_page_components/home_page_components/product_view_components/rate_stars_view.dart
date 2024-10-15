@@ -58,7 +58,7 @@ class RateStars extends StatelessWidget {
                 child: withText
                     ? Text("$nbRates avis",
                         style: GoogleFonts.workSans(
-                          color: Color.fromARGB(255, 102, 102, 102),
+                          color: const Color.fromARGB(255, 102, 102, 102),
                           fontSize: manageWidth(context, 11),
                         ))
                     : null,
@@ -156,7 +156,7 @@ class RateStars extends StatelessWidget {
                 child: withText
                     ? Text("$nbRates avis",
                         style: GoogleFonts.workSans(
-                          color: Color.fromARGB(255, 102, 102, 102),
+                          color: const Color.fromARGB(255, 102, 102, 102),
                           fontSize: manageWidth(context, 11),
                         ))
                     : null,
@@ -205,7 +205,7 @@ class RateStars extends StatelessWidget {
                 child: withText
                     ? Text("$nbRates avis",
                         style: GoogleFonts.workSans(
-                          color: Color.fromARGB(255, 102, 102, 102),
+                          color: const Color.fromARGB(255, 102, 102, 102),
                           fontSize: manageWidth(context, 11),
                         ))
                     : null,
@@ -254,7 +254,7 @@ class RateStars extends StatelessWidget {
                 child: withText
                     ? Text("$nbRates avis",
                         style: GoogleFonts.workSans(
-                          color: Color.fromARGB(255, 102, 102, 102),
+                          color: const Color.fromARGB(255, 102, 102, 102),
                           fontSize: manageWidth(context, 11),
                         ))
                     : null,
@@ -303,7 +303,7 @@ class RateStars extends StatelessWidget {
                 child: withText
                     ? Text("$nbRates avis",
                         style: GoogleFonts.workSans(
-                          color: Color.fromARGB(255, 102, 102, 102),
+                          color: const Color.fromARGB(255, 102, 102, 102),
                           fontSize: manageWidth(context, 11),
                         ))
                     : null,
@@ -352,7 +352,7 @@ class RateStars extends StatelessWidget {
             child: withText
                 ? Text("$nbRates avis",
                     style: GoogleFonts.workSans(
-                      color: Color.fromARGB(255, 102, 102, 102),
+                      color: const Color.fromARGB(255, 102, 102, 102),
                       fontSize: manageWidth(context, 11),
                     ))
                 : null,

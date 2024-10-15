@@ -30,14 +30,14 @@ class _ReAuthPageState extends State<ReAuthPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: AppBarTitleText(title: "Suppression de Compte", size: 18),
+        title: const AppBarTitleText(title: "Suppression de Compte", size: 18),
       ),
       body: Column(
         children: [
           SizedBox(
             height: manageHeight(context, 20),
           ),
-          AppBarTitleText(title: "Veuillez vous réauthentifier.", size: 16),
+          const AppBarTitleText(title: "Veuillez vous réauthentifier.", size: 16),
 
           AuthTextField(
             controller: emailController,
@@ -66,7 +66,7 @@ class _ReAuthPageState extends State<ReAuthPage> {
                 MaterialPageRoute(builder: (context) => ResetPassWordPage()),
               );
             },
-            child: Text(
+            child: const Text(
               "mot de passe oublié?",
               style: TextStyle(color: Colors.blue),
             ),
@@ -116,7 +116,7 @@ class _ReAuthPageState extends State<ReAuthPage> {
             child: Text(
               errorMessage,
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.red),
+              style: const TextStyle(color: Colors.red),
             ),
           ),
           SizedBox(
@@ -124,7 +124,7 @@ class _ReAuthPageState extends State<ReAuthPage> {
           ),
           Row(
             children: [
-              Expanded(
+              const Expanded(
                 child: Divider(thickness: 0.5, color: Colors.grey),
               ),
               Padding(
@@ -136,7 +136,7 @@ class _ReAuthPageState extends State<ReAuthPage> {
                       color: Colors.grey.shade600, fontWeight: FontWeight.w600),
                 ),
               ),
-              Expanded(
+              const Expanded(
                 child: Divider(thickness: 0.5, color: Colors.grey),
               ),
             ],
@@ -156,13 +156,13 @@ class _ReAuthPageState extends State<ReAuthPage> {
                         context, '/login', (route) => false);
                   }
                 },
-                child: SquareAuthProvider(
+                child: const SquareAuthProvider(
                     imagePath: "images/login_images/google_logo.png"),
               ),
               SizedBox(
                 width: manageWidth(context, 20),
               ),
-              SquareAuthProvider(
+              const SquareAuthProvider(
                   imagePath: "images/login_images/apple_logo.png"),
             ],
           ),

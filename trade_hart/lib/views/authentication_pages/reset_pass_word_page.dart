@@ -7,7 +7,7 @@ import 'package:trade_hart/tools/widgets/app_bar_title_text.dart';
 import 'package:trade_hart/views/authentication_pages/widgets/auth_textfield.dart';
 
 class ResetPassWordPage extends StatefulWidget {
-  ResetPassWordPage({super.key});
+  const ResetPassWordPage({super.key});
 
   @override
   State<ResetPassWordPage> createState() => _ResetPassWordPageState();
@@ -56,7 +56,7 @@ class _ResetPassWordPageState extends State<ResetPassWordPage> {
                 await AuthService().resetPassword(emailController.text);
                 setState(() {});
               },
-              child: Text(
+              child: const Text(
                 "Réinitialiser le mot de passe",
                 style: TextStyle(color: Colors.blue),
               ),
@@ -67,7 +67,7 @@ class _ResetPassWordPageState extends State<ResetPassWordPage> {
               ),
               child: Text(
                 resetMessage,
-                style: TextStyle(
+                style: const TextStyle(
                   color: AppColors.mainColor,
                 ),
                 textAlign: TextAlign.center,

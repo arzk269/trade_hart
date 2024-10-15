@@ -28,7 +28,7 @@ import 'package:path_provider/path_provider.dart';
 
 class EditArticlePage extends StatefulWidget {
   final Article article;
-  EditArticlePage({super.key, required this.article});
+  const EditArticlePage({super.key, required this.article});
 
   @override
   State<EditArticlePage> createState() => _EditArticlePageState();
@@ -180,7 +180,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
       if (pickedImage != null) {
         var croppedFile = await ImageCropper().cropImage(
           sourcePath: pickedImage.path,
-          aspectRatio: CropAspectRatio(ratioX: 11.8, ratioY: 10),
+          aspectRatio: const CropAspectRatio(ratioX: 11.8, ratioY: 10),
           compressQuality: 100,
         );
 
@@ -212,6 +212,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
             height: manageHeight(context, 150),
             width: manageWidth(context, 165),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
                   CupertinoIcons.exclamationmark_triangle,
@@ -226,7 +227,6 @@ class _EditArticlePageState extends State<EditArticlePage> {
                   textAlign: TextAlign.center,
                 )
               ],
-              mainAxisAlignment: MainAxisAlignment.center,
             )),
       ));
     }
@@ -253,7 +253,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: MainBackButton(),
+          leading: const MainBackButton(),
           title: Text(
             "Modifier cet article",
             style: GoogleFonts.poppins(
@@ -308,7 +308,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(
                                 manageHeight(context, 15)),
-                            color: Color.fromARGB(255, 221, 202, 202)),
+                            color: const Color.fromARGB(255, 221, 202, 202)),
                         child: ClipRRect(
                             borderRadius: BorderRadius.circular(
                                 manageHeight(context, 15)),
@@ -341,30 +341,30 @@ class _EditArticlePageState extends State<EditArticlePage> {
                     context,
                     6,
                   ),
-                  margin: EdgeInsets.all(2.5),
+                  margin: const EdgeInsets.all(2.5),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               GestureDetector(
                 onTap: () {
                   showDialog(
                     context: context,
                     builder: (BuildContext context) {
                       return AlertDialog(
-                        title: Text('Confirmation'),
+                        title: const Text('Confirmation'),
                         content: Text(
                           'La suppression de cette image entrainera celle de la couleur qui lui est associée.',
                           style: TextStyle(fontSize: manageWidth(context, 15)),
                         ),
                         actions: <Widget>[
                           TextButton(
-                            child: Text('Annuler'),
+                            child: const Text('Annuler'),
                             onPressed: () {
                               Navigator.of(context).pop();
                             },
                           ),
                           TextButton(
-                            child: Text(
+                            child: const Text(
                               'Supprimer',
                               style: TextStyle(color: Colors.red),
                             ),
@@ -463,7 +463,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                       border: Border.all(
                         color: productImages.isEmpty
                             ? Colors.transparent
-                            : Color.fromARGB(255, 206, 86,
+                            : const Color.fromARGB(255, 206, 86,
                                 86), // Couleur des bordures vertes
                         width:
                             manageWidth(context, 1.0), // Épaisseur des bordures
@@ -478,7 +478,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                             fontSize: manageWidth(context, 12),
                             color: productImages.isEmpty
                                 ? Colors.transparent
-                                : Color.fromARGB(255, 206, 86, 86),
+                                : const Color.fromARGB(255, 206, 86, 86),
                           )),
                       SizedBox(
                         width: manageWidth(context, 5),
@@ -487,7 +487,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                         CupertinoIcons.trash,
                         color: productImages.isEmpty
                             ? Colors.transparent
-                            : Color.fromARGB(255, 206, 86, 86),
+                            : const Color.fromARGB(255, 206, 86, 86),
                         size: manageWidth(context, 16),
                       )
                     ],
@@ -518,7 +518,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
             onTap: productImages.length < 10
                 ? () {
                     if (isUploaded) {
-                      var snackBar = SnackBar(
+                      var snackBar = const SnackBar(
                         content: Text(
                           "Vous avez déjà ajouter cet article.",
                         ),
@@ -602,7 +602,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                     }
                   }
                 : () {
-                    var snackBar = SnackBar(
+                    var snackBar = const SnackBar(
                       content: Text(
                         "Vous n'avez droit qu'à 10 images maximum.",
                       ),
@@ -662,7 +662,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
             ],
           ),
           Container(
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               width: manageWidth(context, 335),
               decoration: BoxDecoration(
                 color: Colors.grey.shade100,
@@ -678,7 +678,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                   controller: descriptionController,
                   maxLines: null,
                   maxLength: 250,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: "ajouter une description"),
                 ),
@@ -820,7 +820,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                                 manageHeight(context, 5)),
                             decoration: BoxDecoration(
                                 border: Border.all(
-                                  color: Color.fromARGB(255, 180, 92, 159),
+                                  color: const Color.fromARGB(255, 180, 92, 159),
                                   width: manageWidth(
                                       context, 1.0), // Épaisseur des bordures
                                 ),
@@ -840,7 +840,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                                   },
                                   child: Icon(CupertinoIcons.clear,
                                       size: manageWidth(context, 18),
-                                      color: Color.fromARGB(255, 180, 92, 159)),
+                                      color: const Color.fromARGB(255, 180, 92, 159)),
                                 ),
                                 SizedBox(
                                   width: manageWidth(context, 3),
@@ -850,7 +850,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                                   style: GoogleFonts.poppins(
                                       fontWeight: FontWeight.w400,
                                       fontSize: manageWidth(context, 15),
-                                      color: Color.fromARGB(255, 180, 92, 159)),
+                                      color: const Color.fromARGB(255, 180, 92, 159)),
                                 ),
                               ],
                             )),
@@ -879,7 +879,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                               .any((color) =>
                                   color.imageUrl == element.semanticLabel))
                       .isEmpty) {
-                    var snackBar = SnackBar(
+                    var snackBar = const SnackBar(
                       content: Text(
                         "Pour ajouter de nouvelles couleurs vous devez enregistrer de nouvelles images.",
                       ),
@@ -1041,7 +1041,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                       color: Colors.grey.withOpacity(0.3),
                       spreadRadius: 1.5,
                       blurRadius: 5,
-                      offset: Offset(0, 2),
+                      offset: const Offset(0, 2),
                     ),
                   ],
                 ),
@@ -1074,7 +1074,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                                                     .withOpacity(0.2),
                                                 spreadRadius: 3,
                                                 blurRadius: 4,
-                                                offset: Offset(1,
+                                                offset: const Offset(1,
                                                     2), // changement de position de l'ombre
                                               ),
                                             ],
@@ -1121,7 +1121,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                                                 )),
                                           ],
                                         ),
-                                        Spacer(),
+                                        const Spacer(),
                                         Column(
                                           children: [
                                             SizedBox(
@@ -1138,7 +1138,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                                                         .remove(e);
                                                   });
                                                 } else {
-                                                  var snackBar = SnackBar(
+                                                  var snackBar = const SnackBar(
                                                     content: Text(
                                                       "Il doit y avoir au moins une couleur.",
                                                     ),
@@ -1152,7 +1152,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                                               },
                                               child: Icon(
                                                 CupertinoIcons.trash,
-                                                color: Color.fromARGB(
+                                                color: const Color.fromARGB(
                                                     255, 206, 86, 86),
                                                 size: manageWidth(context, 20),
                                               ),
@@ -1212,7 +1212,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                                             color: Colors.grey.shade700,
                                           ),
                                         ),
-                                        Spacer(),
+                                        const Spacer(),
                                         GestureDetector(
                                           onTap: () {
                                             Navigator.push(
@@ -1235,7 +1235,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                                             width: 165,
                                             decoration: BoxDecoration(
                                                 border: Border.all(
-                                                  color: Color.fromARGB(
+                                                  color: const Color.fromARGB(
                                                       255,
                                                       255,
                                                       146,
@@ -1255,7 +1255,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                                                           FontWeight.w400,
                                                       fontSize: manageWidth(
                                                           context, 14),
-                                                      color: Color.fromARGB(
+                                                      color: const Color.fromARGB(
                                                           255, 255, 146, 146),
                                                     )),
                                                 SizedBox(
@@ -1264,7 +1264,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                                                 ),
                                                 Icon(
                                                   Icons.add,
-                                                  color: Color.fromARGB(
+                                                  color: const Color.fromARGB(
                                                       255, 255, 146, 146),
                                                   size:
                                                       manageWidth(context, 16),
@@ -1631,7 +1631,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                       maxDelayController.text.isEmpty ||
                       livraisonController.text.isEmpty)
                   ? () {
-                      var snackBar = SnackBar(
+                      var snackBar = const SnackBar(
                         content: Text(
                           "Veuillez remplir tous les champs.",
                         ),
@@ -1641,7 +1641,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                     }
                   : isUploaded
                       ? () {
-                          var snackBar = SnackBar(
+                          var snackBar = const SnackBar(
                             content: Text(
                               "Vous avez déjà ajouter cet article.",
                             ),
@@ -1651,7 +1651,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                         }
                       : productImages.isEmpty
                           ? () {
-                              var snackBar = SnackBar(
+                              var snackBar = const SnackBar(
                                 content: Text(
                                   "Vous devez ajouter au moins une image",
                                 ),
@@ -1692,7 +1692,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
                                   .read<CategoriesProvider>()
                                   .articleCategoriesclear();
 
-                              var snackBar = SnackBar(
+                              var snackBar = const SnackBar(
                                 content: Text(
                                   "Article modifié avec succès.",
                                 ),
@@ -1735,7 +1735,7 @@ class _EditArticlePageState extends State<EditArticlePage> {
               height: manageHeight(context, 50),
               padding: EdgeInsets.only(bottom: manageHeight(context, 2)),
               decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 232, 88, 88),
+                  color: const Color.fromARGB(255, 232, 88, 88),
                   borderRadius:
                       BorderRadius.circular(manageHeight(context, 25))),
               child: Center(

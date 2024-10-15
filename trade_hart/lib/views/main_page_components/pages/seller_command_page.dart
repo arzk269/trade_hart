@@ -129,34 +129,34 @@ class _SellerCommandPageState extends State<SellerCommandPage> {
                       ),
                       DropdownButton(
                         hint: Text(filter),
-                        items: [
+                        items: const [
                           DropdownMenuItem(
-                            child: Text("Toutes"),
                             value: "Toutes",
+                            child: Text("Toutes"),
                           ),
                           DropdownMenuItem(
-                            child: Text("En cours de traitement"),
                             value: "En cours de traitement",
+                            child: Text("En cours de traitement"),
                           ),
                           DropdownMenuItem(
-                            child: Text("En attente d'expédition"),
                             value: "En attente d'expédition",
+                            child: Text("En attente d'expédition"),
                           ),
                           DropdownMenuItem(
-                            child: Text("Expédiée(s)"),
                             value: "Expédiée(s)",
+                            child: Text("Expédiée(s)"),
                           ),
                           DropdownMenuItem(
-                            child: Text("Annulée(s)"),
                             value: "Annulée(s)",
+                            child: Text("Annulée(s)"),
                           ),
                           DropdownMenuItem(
-                            child: Text("Livrée(s)"),
                             value: "Livrée(s)",
+                            child: Text("Livrée(s)"),
                           ),
                           DropdownMenuItem(
-                            child: Text("Signalée(s)"),
                             value: "Signalée(s)",
+                            child: Text("Signalée(s)"),
                           )
                         ],
                         onChanged: (value) {

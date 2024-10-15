@@ -110,7 +110,7 @@ class _SearchPageState extends State<SearchPage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: ((context) => HistoryPage())));
+                                    builder: ((context) => const HistoryPage())));
                           },
                           icon: Icon(
                             Icons.history_sharp,
@@ -481,7 +481,7 @@ class _SearchPageState extends State<SearchPage> {
                                             ],
                                           ),
                                           child: !snapshot.hasData
-                                              ? Center(
+                                              ? const Center(
                                                   child: Text(
                                                       "Aucune donnée relative à votre recherche n'a été trouvée"))
                                               : ListView(
@@ -700,14 +700,14 @@ class _SearchPageState extends State<SearchPage> {
                                                                             165),
                                                                         child:
                                                                             Column(
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.center,
                                                                           children: [
                                                                             Icon(
                                                                               CupertinoIcons.exclamationmark_triangle_fill,
                                                                               size: manageWidth(context, 15),
                                                                             ),
                                                                           ],
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
                                                                         )),
                                                               ),
                                                             ),
@@ -756,7 +756,7 @@ class _SearchPageState extends State<SearchPage> {
                                     ],
                                   ),
                                   child: !snapshot.hasData
-                                      ? Center(
+                                      ? const Center(
                                           child: Text(
                                               "Aucune donnée relative à votre recherche n'a été trouvée"))
                                       : ListView(
@@ -972,6 +972,9 @@ class _SearchPageState extends State<SearchPage> {
                                                                         context,
                                                                         165),
                                                                 child: Column(
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .center,
                                                                   children: [
                                                                     Icon(
                                                                       CupertinoIcons
@@ -981,9 +984,6 @@ class _SearchPageState extends State<SearchPage> {
                                                                           15),
                                                                     ),
                                                                   ],
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .center,
                                                                 )),
                                                       ),
                                                     ),
@@ -1157,7 +1157,7 @@ class _SearchPageState extends State<SearchPage> {
                                           ],
                                         ),
                                         child: !snapshot.hasData
-                                            ? Center(
+                                            ? const Center(
                                                 child: Text(
                                                     "Aucune donnée relative à votre recherche n'a été trouvée"))
                                             : ListView(
@@ -1379,6 +1379,9 @@ class _SearchPageState extends State<SearchPage> {
                                                                   SizedBox(
                                                                       child:
                                                                           Column(
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .center,
                                                                 children: [
                                                                   Icon(
                                                                     CupertinoIcons
@@ -1388,9 +1391,6 @@ class _SearchPageState extends State<SearchPage> {
                                                                         20),
                                                                   ),
                                                                 ],
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .center,
                                                               )),
                                                             ),
                                                           ),
@@ -1438,7 +1438,7 @@ class _SearchPageState extends State<SearchPage> {
                                   ],
                                 ),
                                 child: !snapshot.hasData
-                                    ? Center(
+                                    ? const Center(
                                         child: Text(
                                             "Aucune donnée relative à votre recherche n'a été trouvée"))
                                     : ListView(
@@ -1648,6 +1648,9 @@ class _SearchPageState extends State<SearchPage> {
                                                               stackTrace) =>
                                                           SizedBox(
                                                               child: Column(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
                                                         children: [
                                                           Icon(
                                                             CupertinoIcons
@@ -1656,9 +1659,6 @@ class _SearchPageState extends State<SearchPage> {
                                                                 context, 20),
                                                           ),
                                                         ],
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
                                                       )),
                                                     ),
                                                   ),

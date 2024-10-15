@@ -28,7 +28,7 @@ import 'package:http/http.dart' as http;
 
 class ServiceDetailPage extends StatefulWidget {
   final String? serviceId;
-  ServiceDetailPage({super.key, this.serviceId});
+  const ServiceDetailPage({super.key, this.serviceId});
 
   @override
   State<ServiceDetailPage> createState() => _ServiceDetailPageState();
@@ -239,7 +239,7 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
     } catch (error) {
       // Afficher une snackbar en cas d'échec
       // ignore: use_build_context_synchronously
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           content: Text(
               'Une erreur est survenue lors de la confirmation de cette réservation.',
               style: TextStyle(color: Colors.white)),
@@ -469,7 +469,7 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
 
                                                   ScaffoldMessenger.of(context)
                                                       .showSnackBar(
-                                                    SnackBar(
+                                                    const SnackBar(
                                                       content: Text(
                                                           'Réservation ajoutée avec succès.'),
                                                       backgroundColor:
@@ -634,7 +634,7 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
                                                   // ignore: use_build_context_synchronously
                                                   ScaffoldMessenger.of(context)
                                                       .showSnackBar(
-                                                    SnackBar(
+                                                    const SnackBar(
                                                       content: Text(
                                                           'Réservation ajoutée avec succès.'),
                                                       backgroundColor:
@@ -704,15 +704,15 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => AdressAddingPage()));
+                                builder: (context) => const AdressAddingPage()));
                       },
-                      icon: Icon(CupertinoIcons.add)),
+                      icon: const Icon(CupertinoIcons.add)),
                   TextButton(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => AdressAddingPage()));
+                                builder: (context) => const AdressAddingPage()));
                       },
                       child: Text(
                         "Ajouter une addresse",
@@ -732,13 +732,13 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
 
   Future<void> selectDateAndTime(BuildContext context2, Service service) async {
     final DateTime? pickedDate = await showDatePicker(
-      locale: Locale('fr'),
+      locale: const Locale('fr'),
       helpText: 'Selectionnez une date',
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime.now(),
       lastDate: DateTime.now()
-          .add(Duration(days: 365)), // 1 an à partir de la date d'aujourd'hui
+          .add(const Duration(days: 365)), // 1 an à partir de la date d'aujourd'hui
     );
     if (pickedDate != null) {
       // ignore: use_build_context_synchronously
@@ -835,7 +835,7 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
                 "payment id": paymentId
               });
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
+                const SnackBar(
                   content: Text('Réservation ajoutée avec succès.'),
                   backgroundColor: Colors.green,
                 ),
@@ -894,13 +894,13 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
       'Dimanche',
     ];
     final DateTime? pickedDate = await showDatePicker(
-      locale: Locale('fr'),
+      locale: const Locale('fr'),
       helpText: 'Selectionnez une date',
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime.now(),
       lastDate: DateTime.now()
-          .add(Duration(days: 365)), // 1 an à partir de la date d'aujourd'hui
+          .add(const Duration(days: 365)), // 1 an à partir de la date d'aujourd'hui
     );
     if (pickedDate != null) {
       // ignore: use_build_context_synchronously
@@ -932,7 +932,7 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
                   .snapshots(),
               builder: (context2, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return Center(child: CircularProgressIndicator());
+                  return const Center(child: CircularProgressIndicator());
                 }
 
                 var reservations = snapshot.data!.docs;
@@ -1168,7 +1168,7 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
                                                   });
                                                   ScaffoldMessenger.of(context)
                                                       .showSnackBar(
-                                                    SnackBar(
+                                                    const SnackBar(
                                                       content: Text(
                                                           'Réservation ajoutée avec succès.'),
                                                       backgroundColor:
@@ -1247,13 +1247,13 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
       'Dimanche',
     ];
     final DateTime? pickedDate = await showDatePicker(
-      locale: Locale('fr'),
+      locale: const Locale('fr'),
       helpText: 'Selectionnez une date',
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime.now(),
       lastDate: DateTime.now()
-          .add(Duration(days: 365)), // 1 an à partir de la date d'aujourd'hui
+          .add(const Duration(days: 365)), // 1 an à partir de la date d'aujourd'hui
     );
     if (pickedDate != null) {
       // ignore: use_build_context_synchronously
@@ -1285,7 +1285,7 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
                   .snapshots(),
               builder: (context2, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return CircularProgressIndicator();
+                  return const CircularProgressIndicator();
                 }
 
                 var reservations = snapshot.data!.docs;
@@ -1426,13 +1426,13 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
   Future<void> selectDateAndTimeAndAdress(
       BuildContext context2, Service service) async {
     final DateTime? pickedDate = await showDatePicker(
-      locale: Locale('fr'),
+      locale: const Locale('fr'),
       helpText: 'Selectionnez une date',
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime.now(),
       lastDate: DateTime.now()
-          .add(Duration(days: 365)), // 1 an à partir de la date d'aujourd'hui
+          .add(const Duration(days: 365)), // 1 an à partir de la date d'aujourd'hui
     );
     if (pickedDate != null) {
       // ignore: use_build_context_synchronously
@@ -1480,7 +1480,7 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
               if (widget.serviceId == null) {
                 Navigator.pushAndRemoveUntil(
                     (context),
-                    MaterialPageRoute(builder: (context) => MainPage()),
+                    MaterialPageRoute(builder: (context) => const MainPage()),
                     (Route<dynamic> route) => false);
               } else {
                 Navigator.pop(context);
@@ -1500,7 +1500,7 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
               .snapshots(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(
+              return const Center(
                   child: CircularProgressIndicator(
                 color: AppColors.mainColor,
               ));
@@ -1509,7 +1509,7 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
               return Center(child: Text('Error: ${snapshot.error}'));
             }
             if (!snapshot.hasData || !snapshot.data!.exists) {
-              return Center(child: Text('Service not found'));
+              return const Center(child: Text('Service not found'));
             }
             var serviceData = snapshot.data!.data() as Map<String, dynamic>;
             var service = Service(
@@ -1560,6 +1560,8 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
                                       height: manageHeight(context, 150),
                                       width: manageWidth(context, 165),
                                       child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Icon(
                                             CupertinoIcons
@@ -1575,8 +1577,6 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
                                             textAlign: TextAlign.center,
                                           )
                                         ],
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
                                       ));
                                 }),
                               ),
@@ -1661,7 +1661,7 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
                       maxLines: 5,
                       overflow: TextOverflow.ellipsis,
                       style: GoogleFonts.poppins(
-                        color: Color.fromARGB(255, 155, 89, 69),
+                        color: const Color.fromARGB(255, 155, 89, 69),
                         fontSize: manageWidth(context, 14.5),
                         fontWeight: FontWeight.w400,
                       ),
@@ -1679,14 +1679,14 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
                         rate: service.averageRate.round(),
                         nbRates: service.ratesNumber,
                       ),
-                      Spacer(),
+                      const Spacer(),
                       GestureDetector(
                         onTap: () {
                           if (currentUser == null) {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => LoginPage()));
+                                    builder: (context) => const LoginPage()));
                           } else {
                             Navigator.push(
                               context,
@@ -1729,14 +1729,14 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
                       SizedBox(
                         width: manageWidth(context, 5),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       TextButton(
                         onPressed: () {
                           if (currentUser == null) {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => LoginPage()));
+                                    builder: (context) => const LoginPage()));
                           } else {
                             Navigator.push(
                               context,
@@ -1790,7 +1790,7 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
                       maxLines: 5,
                       overflow: TextOverflow.ellipsis,
                       style: GoogleFonts.poppins(
-                        color: Color.fromARGB(255, 155, 89, 69),
+                        color: const Color.fromARGB(255, 155, 89, 69),
                         fontSize: manageWidth(context, 14.5),
                         fontWeight: FontWeight.w400,
                       ),
@@ -1808,7 +1808,7 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
                             '/ServiceDetailsPage',
                             service.images.first["image url"]);
                       },
-                      child: Text("Partager")),
+                      child: const Text("Partager")),
                   SizedBox(
                     height: manageHeight(context, 120),
                   ),
@@ -1823,7 +1823,7 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => LoginPage()));
+                                    builder: (context) => const LoginPage()));
                           } else {
                             if (service.creneauReservationStatus) {
                               if (service.location == 'Service à dommicile') {
@@ -1867,28 +1867,28 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
                           ),
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Container(
                         padding: EdgeInsets.all(manageWidth(context, 8)),
                         decoration: BoxDecoration(
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.5),
-                              offset: Offset(0, 0),
+                              offset: const Offset(0, 0),
                               blurRadius: manageWidth(context, 5),
                               spreadRadius: manageWidth(context, 0.4),
                             )
                           ],
                           borderRadius:
                               BorderRadius.circular(manageWidth(context, 30)),
-                          color: Color.fromARGB(255, 119, 101, 172)
+                          color: const Color.fromARGB(255, 119, 101, 172)
                               .withOpacity(0.4),
                         ),
                         width: manageWidth(context, 80),
                         height: manageHeight(context, 55),
                         child: Icon(
                           CupertinoIcons.heart,
-                          color: Color.fromARGB(255, 255, 111, 101),
+                          color: const Color.fromARGB(255, 255, 111, 101),
                           size: manageWidth(context, 32),
                         ),
                       ),

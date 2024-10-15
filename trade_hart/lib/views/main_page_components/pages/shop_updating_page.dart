@@ -16,7 +16,7 @@ import 'package:trade_hart/tools/widgets/main_back_button.dart';
 import 'package:path_provider/path_provider.dart';
 
 class ShopUpdatingPage extends StatefulWidget {
-  ShopUpdatingPage({super.key});
+  const ShopUpdatingPage({super.key});
 
   @override
   State<ShopUpdatingPage> createState() => _ShopPersonnalisationPageState();
@@ -272,6 +272,8 @@ class _ShopPersonnalisationPageState extends State<ShopUpdatingPage> {
                                             height: manageHeight(context, 150),
                                             width: manageWidth(context, 165),
                                             child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
                                               children: [
                                                 Icon(
                                                   CupertinoIcons
@@ -290,8 +292,6 @@ class _ShopPersonnalisationPageState extends State<ShopUpdatingPage> {
                                                   textAlign: TextAlign.center,
                                                 )
                                               ],
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
                                             )),
                                   ),
                           )

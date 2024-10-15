@@ -217,7 +217,7 @@ class ProfilePage extends StatelessWidget {
                                                                         23.0),
                                                                     left: manageHeight(
                                                                         context,
-                                                                        40)),
+                                                                        250)),
                                                                 child:
                                                                     CircleAvatar(
                                                                   radius:
@@ -236,11 +236,11 @@ class ProfilePage extends StatelessWidget {
                                                                   top:
                                                                       manageHeight(
                                                                           context,
-                                                                          23.0),
+                                                                          17),
                                                                   left:
-                                                                      manageHeight(
+                                                                      manageWidth(
                                                                           context,
-                                                                          40)),
+                                                                          290)),
                                                               child: CircleAvatar(
                                                                 radius:
                                                                     manageHeight(
@@ -375,9 +375,9 @@ class ProfilePage extends StatelessWidget {
                                                         return Padding(
                                                           padding: EdgeInsets.only(
                                                               top: manageHeight(
-                                                                  context, 23.0),
-                                                              left: manageHeight(
-                                                                  context, 40)),
+                                                                  context, 17),
+                                                              left: manageWidth(
+                                                                  context,290)),
                                                           child: CircleAvatar(
                                                             radius: manageWidth(
                                                                 context, 5),
@@ -477,11 +477,11 @@ class ProfilePage extends StatelessWidget {
                                                                   top:
                                                                       manageHeight(
                                                                           context,
-                                                                          23.0),
+                                                                        17),
                                                                   left:
-                                                                      manageHeight(
+                                                                      manageWidth(
                                                                           context,
-                                                                          40)),
+                                                                          290)),
                                                               child: CircleAvatar(
                                                                 radius:
                                                                     manageHeight(
@@ -622,9 +622,9 @@ class ProfilePage extends StatelessWidget {
                                             return Padding(
                                               padding: EdgeInsets.only(
                                                   top: manageHeight(
-                                                      context, 23.0),
-                                                  left: manageHeight(
-                                                      context, 40)),
+                                                      context, 17),
+                                                  left: manageWidth(
+                                                      context, 290)),
                                               child: CircleAvatar(
                                                 radius:
                                                     manageHeight(context, 5),

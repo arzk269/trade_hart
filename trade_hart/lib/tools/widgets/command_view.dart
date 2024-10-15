@@ -108,7 +108,7 @@ class _CommandViewState extends State<CommandView> {
     } catch (error) {
       // Afficher une snackbar en cas d'échec
       // ignore: use_build_context_synchronously
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           content: Text('Une erreur est survenue. Veuillez réessayer',
               style: TextStyle(color: Colors.white)),
           backgroundColor: Colors.red));
@@ -306,6 +306,8 @@ class _CommandViewState extends State<CommandView> {
                                     height: manageHeight(context, 150),
                                     width: manageWidth(context, 165),
                                     child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         Icon(
                                           CupertinoIcons
@@ -313,8 +315,6 @@ class _CommandViewState extends State<CommandView> {
                                           size: manageWidth(context, 20),
                                         ),
                                       ],
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
                                     )),
                           )),
                     ),
@@ -556,10 +556,10 @@ class _CommandViewState extends State<CommandView> {
                                     builder: (context, snapshot) {
                                       if (snapshot.connectionState ==
                                           ConnectionState.waiting) {
-                                        return SizedBox();
+                                        return const SizedBox();
                                       }
                                       if (!snapshot.data!.exists) {
-                                        return SizedBox();
+                                        return const SizedBox();
                                       }
 
                                       if (snapshot.data!.data()![
@@ -576,7 +576,7 @@ class _CommandViewState extends State<CommandView> {
                                                 ),
                                               );
                                             },
-                                            child: Text("Evaluer"));
+                                            child: const Text("Evaluer"));
                                       }
                                       return TextButton(
                                         onPressed: () {
@@ -830,7 +830,7 @@ class _CommandViewState extends State<CommandView> {
                                             },
                                           );
                                         },
-                                        child: Text("Colis reçu?"),
+                                        child: const Text("Colis reçu?"),
                                       );
                                     })
                                 : null,
@@ -841,7 +841,7 @@ class _CommandViewState extends State<CommandView> {
                   ],
                 ),
               ),
-              Divider(),
+              const Divider(),
             ], // end Column children
           ),
         );

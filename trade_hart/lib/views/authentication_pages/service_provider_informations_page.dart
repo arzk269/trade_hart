@@ -16,7 +16,7 @@ import 'package:geoflutterfire2/geoflutterfire2.dart';
 import 'package:trade_hart/views/main_page_components/pages/stripe_cretation_account_page.dart';
 
 class ServiceProviderInformationsPage extends StatefulWidget {
-  ServiceProviderInformationsPage({super.key});
+  const ServiceProviderInformationsPage({super.key});
 
   @override
   State<ServiceProviderInformationsPage> createState() =>

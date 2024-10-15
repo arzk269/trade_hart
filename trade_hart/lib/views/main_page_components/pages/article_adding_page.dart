@@ -213,7 +213,7 @@ class _AddArticlePageState extends State<AddArticlePage> {
       if (pickedImage != null) {
         var croppedFile = await ImageCropper().cropImage(
           sourcePath: pickedImage.path,
-          aspectRatio: CropAspectRatio(ratioX: 11.8, ratioY: 10),
+          aspectRatio: const CropAspectRatio(ratioX: 11.8, ratioY: 10),
           compressQuality: 100,
         );
 

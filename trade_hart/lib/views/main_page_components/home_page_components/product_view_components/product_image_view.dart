@@ -25,6 +25,7 @@ class ProductImageView extends StatelessWidget {
               height: manageHeight(context, 150),
               width: manageWidth(context, 165),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
                     CupertinoIcons.exclamationmark_triangle,
@@ -39,7 +40,6 @@ class ProductImageView extends StatelessWidget {
                     textAlign: TextAlign.center,
                   )
                 ],
-                mainAxisAlignment: MainAxisAlignment.center,
               ));
         },
       ),

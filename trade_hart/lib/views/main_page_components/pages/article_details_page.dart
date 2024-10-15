@@ -557,7 +557,7 @@ class _ArticleDetailsPageState extends State<ArticleDetailsPage> {
             if (widget.articleId == null) {
               Navigator.pushAndRemoveUntil(
                   (context),
-                  MaterialPageRoute(builder: (context) => MainPage()),
+                  MaterialPageRoute(builder: (context) => const MainPage()),
                   (Route<dynamic> route) => false);
             } else {
               Navigator.pop(context);
@@ -591,7 +591,7 @@ class _ArticleDetailsPageState extends State<ArticleDetailsPage> {
                   return IconButton(
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => CartPage()));
+                          MaterialPageRoute(builder: (context) => const CartPage()));
                     },
                     icon: Stack(
                       children: [
@@ -718,6 +718,8 @@ class _ArticleDetailsPageState extends State<ArticleDetailsPage> {
                                         height: manageHeight(context, 150),
                                         width: manageWidth(context, 165),
                                         child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
                                             Icon(
                                               CupertinoIcons
@@ -734,8 +736,6 @@ class _ArticleDetailsPageState extends State<ArticleDetailsPage> {
                                               textAlign: TextAlign.center,
                                             )
                                           ],
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
                                         ));
                                   }),
                                 ))))
@@ -816,7 +816,7 @@ class _ArticleDetailsPageState extends State<ArticleDetailsPage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => LoginPage()));
+                                    builder: (context) => const LoginPage()));
                           } else {
                             Navigator.push(
                                 context,
@@ -862,7 +862,7 @@ class _ArticleDetailsPageState extends State<ArticleDetailsPage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => LoginPage()));
+                                    builder: (context) => const LoginPage()));
                           } else {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) {
@@ -983,6 +983,8 @@ class _ArticleDetailsPageState extends State<ArticleDetailsPage> {
                                         height: manageHeight(context, 70),
                                         width: manageWidth(context, 70),
                                         child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
                                             Icon(
                                               CupertinoIcons
@@ -990,8 +992,6 @@ class _ArticleDetailsPageState extends State<ArticleDetailsPage> {
                                               size: manageWidth(context, 20),
                                             ),
                                           ],
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
                                         ));
                                   }),
                                 ),
@@ -1142,7 +1142,7 @@ class _ArticleDetailsPageState extends State<ArticleDetailsPage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => LoginPage()));
+                                    builder: (context) => const LoginPage()));
                           } else {
                             showModalBottomSheet(
                                 context: context,

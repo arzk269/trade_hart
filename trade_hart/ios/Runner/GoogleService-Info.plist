@@ -2,14 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CLIENT_ID</key>
+	<string>897647377174-h906fdvk523a59nf5jd3002om51jovs6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.897647377174-h906fdvk523a59nf5jd3002om51jovs6</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>897647377174-8vfg4ov969fh0lvi9a03dn47pr5g958k.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyALJxuYgY54VGGtriUnvkXb1iF_FQKSS3o</string>
+	<string>AIzaSyBaKpqFXcAFWwlXO5KECWZY69Jy-ECdL8U</string>
 	<key>GCM_SENDER_ID</key>
-	<string>520318492883</string>
+	<string>897647377174</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.tradhart.app</string>
+	<string>com.example.tradeHart</string>
 	<key>PROJECT_ID</key>
 	<string>tradehart-f5f44</string>
 	<key>STORAGE_BUCKET</key>

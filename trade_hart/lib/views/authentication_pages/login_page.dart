@@ -66,11 +66,11 @@ class _LoginPageState extends State<LoginPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SignUpPage(type: "buyer"),
+                          builder: (context) => const SignUpPage(type: "buyer"),
                         ),
                       );
                     },
-                    child: Text(
+                    child: const Text(
                       "S'inscrire,",
                       style: TextStyle(color: AppColors.mainColor),
                     ),
@@ -82,7 +82,7 @@ class _LoginPageState extends State<LoginPage> {
                         return BusinessChoicePage();
                       }));
                     },
-                    child: Text(
+                    child: const Text(
                       " Compte pro",
                       style:
                           TextStyle(color: Color.fromARGB(255, 250, 59, 142)),
@@ -122,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                   MaterialPageRoute(builder: (context) => ResetPassWordPage()),
                 );
               },
-              child: Text(
+              child: const Text(
                 "mot de passe oublié?",
                 style: TextStyle(color: Colors.blue),
               ),
@@ -156,23 +156,23 @@ class _LoginPageState extends State<LoginPage> {
 
                       Navigator.pushAndRemoveUntil(context,
                           MaterialPageRoute(builder: (context) {
-                        if (!userData!.exists) {
-                          return Scaffold(
+                        if (!userData.exists) {
+                          return const Scaffold(
                             body: Text("Utilisataur introuvable"),
                           );
                         } else if (userData.data()!["user type"] == "seller") {
                           if (!userData.data()!.containsKey("shop")) {
-                            return ShopInformationsPage();
+                            return const ShopInformationsPage();
                           } else if (!userData
                               .data()!
                               .containsKey("stripe account id")) {
-                            return StripeCreationPage(
+                            return const StripeCreationPage(
                               businessType: 0,
                             );
                           } else if (!(userData.data()!["shop"]
                                   as Map<String, dynamic>)
                               .containsKey("cover image")) {
-                            return ShopPersonnalisationPage();
+                            return const ShopPersonnalisationPage();
                           }
                         } else if (userData.data()!["user type"] ==
                             "provider") {
@@ -181,15 +181,15 @@ class _LoginPageState extends State<LoginPage> {
                           } else if (!userData
                               .data()!
                               .containsKey("stripe account id")) {
-                            return StripeCreationPage(
+                            return const StripeCreationPage(
                               businessType: 1,
                             );
                           } else if (!userData.data()!.containsKey("images")) {
-                            return ServiceProviderPersonalizationPage();
+                            return const ServiceProviderPersonalizationPage();
                           }
                         }
 
-                        return MainPage();
+                        return const MainPage();
                       }), (route) => false);
                     }
                   });
@@ -220,7 +220,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Text(
                 errorMessage,
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.red),
+                style: const TextStyle(color: Colors.red),
               ),
             ),
             SizedBox(
@@ -228,7 +228,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             Row(
               children: [
-                Expanded(
+                const Expanded(
                   child: Divider(thickness: 0.5, color: Colors.grey),
                 ),
                 Padding(
@@ -241,7 +241,7 @@ class _LoginPageState extends State<LoginPage> {
                         fontWeight: FontWeight.w600),
                   ),
                 ),
-                Expanded(
+                const Expanded(
                   child: Divider(thickness: 0.5, color: Colors.grey),
                 ),
               ],
@@ -258,18 +258,18 @@ class _LoginPageState extends State<LoginPage> {
                       if (value != null) {
                         Navigator.pushAndRemoveUntil(context,
                             MaterialPageRoute(builder: (context) {
-                          return MainPage();
+                          return const MainPage();
                         }), (route) => false);
                       }
                     });
                   },
-                  child: SquareAuthProvider(
+                  child: const SquareAuthProvider(
                       imagePath: "images/login_images/google_logo.png"),
                 ),
                 SizedBox(
                   width: manageWidth(context, 20),
                 ),
-                SquareAuthProvider(
+                const SquareAuthProvider(
                     imagePath: "images/login_images/apple_logo.png"),
               ],
             ),

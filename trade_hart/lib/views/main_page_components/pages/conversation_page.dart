@@ -103,7 +103,7 @@ class _ConversationPageState extends State<ConversationPage> {
             if (widget.memberId == null) {
               Navigator.pushAndRemoveUntil(
                   (context),
-                  MaterialPageRoute(builder: (context) => MainPage()),
+                  MaterialPageRoute(builder: (context) => const MainPage()),
                   (Route<dynamic> route) => false);
             } else {
               Navigator.pop(context);
@@ -125,7 +125,7 @@ class _ConversationPageState extends State<ConversationPage> {
               height: manageWidth(context, 22),
               width: manageWidth(context, 22),
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 218, 215, 215).withOpacity(0.6),
+                color: const Color.fromARGB(255, 218, 215, 215).withOpacity(0.6),
                 borderRadius: BorderRadius.circular(manageWidth(context, 20)),
               ),
               child: Center(
@@ -147,7 +147,7 @@ class _ConversationPageState extends State<ConversationPage> {
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w500,
                       fontSize: manageWidth(context, 15),
-                      color: Color.fromARGB(255, 74, 74, 74),
+                      color: const Color.fromARGB(255, 74, 74, 74),
                     ),
                   ),
                 );
@@ -252,14 +252,14 @@ class _ConversationPageState extends State<ConversationPage> {
                                         height: manageWidth(context, 40),
                                         width: manageWidth(context, 40),
                                         child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
                                             Icon(
                                               CupertinoIcons.person,
                                               size: manageWidth(context, 25),
                                             ),
                                           ],
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
                                         )),
                                 fit: BoxFit.cover,
                               ),
@@ -401,8 +401,8 @@ class _ConversationPageState extends State<ConversationPage> {
                 }),
           ),
           Container(
-            margin: EdgeInsets.only(bottom: manageHeight(context, 5)),
-            padding: EdgeInsets.symmetric(horizontal: manageWidth(context, 15)),
+            margin: EdgeInsets.only(bottom: manageHeight(context, 25),right: manageWidth(context, 5),left: manageWidth(context, 5)),
+            padding: EdgeInsets.symmetric(horizontal: manageWidth(context, 25)),
             decoration: BoxDecoration(
                 border: Border.all(color: Colors.grey.withOpacity(0.7)),
                 color: Colors.grey.shade50,

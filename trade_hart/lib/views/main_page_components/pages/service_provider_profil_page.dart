@@ -25,7 +25,7 @@ import 'package:trade_hart/views/main_page_components/pages/service_stat_page.da
 import 'package:trade_hart/views/main_page_components/pages/service_with_crenau_editing_page.dart';
 
 class ServiceProviderProfilPage extends StatefulWidget {
-  ServiceProviderProfilPage({super.key});
+  const ServiceProviderProfilPage({super.key});
 
   @override
   State<ServiceProviderProfilPage> createState() =>
@@ -41,7 +41,7 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
           size: manageWidth(context, 18),
           title: "Mes services TradHart",
         ),
-        leading: MainBackButton(),
+        leading: const MainBackButton(),
       ),
       body: SingleChildScrollView(
           child: StreamBuilder<DocumentSnapshot>(
@@ -86,6 +86,7 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(10),
                                     child: InstaImageViewer(
+                                      imageUrl: images["cover image"],
                                       child: Image.network(
                                           images["cover image"],
                                           fit: BoxFit.cover, errorBuilder:
@@ -116,7 +117,6 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                                                   MainAxisAlignment.center,
                                             ));
                                       }),
-                                      imageUrl: images["cover image"],
                                     ),
                                   ),
                                 ),
@@ -166,6 +166,8 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                                                       manageWidth(
                                                           context, 50 * 0.7)),
                                               child: InstaImageViewer(
+                                                imageUrl:
+                                                    images["profil image"],
                                                 child: Image.network(
                                                     images["profil image"],
                                                     fit: BoxFit.cover,
@@ -190,8 +192,6 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                                                                 .center,
                                                       ));
                                                 }),
-                                                imageUrl:
-                                                    images["profil image"],
                                               ),
                                             ),
                                           ),
@@ -211,17 +211,17 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                             Text(
                               service["name"],
                               style: GoogleFonts.poppins(
-                                color: Color.fromARGB(255, 74, 74, 74),
+                                color: const Color.fromARGB(255, 74, 74, 74),
                                 fontWeight: FontWeight.w500,
                                 fontSize: manageWidth(context, 17),
                               ),
                             ),
-                            Spacer(),
+                            const Spacer(),
                             GestureDetector(
                               onTap: () {
                                 if (kIsWeb) {
                                   ScaffoldMessenger.of(context)
-                                      .showSnackBar(SnackBar(
+                                      .showSnackBar(const SnackBar(
                                     content: Text(
                                       "Vous devez télécharger l'application mobile",
                                       style: TextStyle(color: Colors.white),
@@ -233,7 +233,7 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            ServiceUpdatingPage()),
+                                            const ServiceUpdatingPage()),
                                   );
                                 }
                               },
@@ -306,7 +306,7 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                FollowersPage()),
+                                                const FollowersPage()),
                                       );
                                     },
                                     child: StreamBuilder(
@@ -356,7 +356,7 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                                 ],
                               ),
                             ),
-                            Spacer(),
+                            const Spacer(),
                             Text(
                               "Voir tous les avis",
                               style: GoogleFonts.poppins(
@@ -375,7 +375,7 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                               onTap: () {
                                 if (kIsWeb) {
                                   ScaffoldMessenger.of(context)
-                                      .showSnackBar(SnackBar(
+                                      .showSnackBar(const SnackBar(
                                     content: Text(
                                       "Vous devez télécharger l'application mobile",
                                       style: TextStyle(color: Colors.white),
@@ -393,7 +393,7 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                                           .read<
                                               ServiceReservationMethodProvider>()
                                           .clearAllCrenau();
-                                      return ServiceAddPage();
+                                      return const ServiceAddPage();
                                     }),
                                   );
                                 }
@@ -407,7 +407,7 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                                 width: manageWidth(context, 200),
                                 decoration: BoxDecoration(
                                   border: Border.all(
-                                    color: Color.fromARGB(255, 255, 146, 146),
+                                    color: const Color.fromARGB(255, 255, 146, 146),
                                     width: 1.0,
                                   ),
                                   borderRadius: BorderRadius.circular(
@@ -421,20 +421,20 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                                         fontWeight: FontWeight.w400,
                                         fontSize: manageWidth(context, 16),
                                         color:
-                                            Color.fromARGB(255, 255, 146, 146),
+                                            const Color.fromARGB(255, 255, 146, 146),
                                       ),
                                     ),
                                     SizedBox(width: manageWidth(context, 5)),
                                     Icon(
                                       Icons.add,
-                                      color: Color.fromARGB(255, 255, 146, 146),
+                                      color: const Color.fromARGB(255, 255, 146, 146),
                                       size: manageWidth(context, 18),
                                     ),
                                   ],
                                 ),
                               ),
                             ),
-                            Spacer(),
+                            const Spacer(),
                             IconButton(
                                 onPressed: () {
                                   LinkProviderService().shareLink(
@@ -447,7 +447,7 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                                       '/ProviderPage',
                                       images["profil image"]);
                                 },
-                                icon: Icon(Icons.ios_share))
+                                icon: const Icon(Icons.ios_share))
                           ],
                         ),
                         Padding(
@@ -469,7 +469,7 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                             style: GoogleFonts.poppins(
                               fontWeight: FontWeight.w500,
                               fontSize: manageWidth(context, 15),
-                              color: Color.fromARGB(255, 159, 102, 156),
+                              color: const Color.fromARGB(255, 159, 102, 156),
                             ),
                           ),
                         ),
@@ -482,7 +482,7 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                             style: GoogleFonts.poppins(
                               fontWeight: FontWeight.w600,
                               fontSize: manageWidth(context, 15),
-                              color: Color.fromARGB(255, 74, 74, 74),
+                              color: const Color.fromARGB(255, 74, 74, 74),
                             ),
                           ),
                         ),
@@ -495,7 +495,7 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                             style: GoogleFonts.poppins(
                               fontWeight: FontWeight.w500,
                               fontSize: manageWidth(context, 19),
-                              color: Color.fromARGB(255, 74, 74, 74),
+                              color: const Color.fromARGB(255, 74, 74, 74),
                             ),
                           ),
                         ),
@@ -536,7 +536,7 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                             builder: (context, snapshot) {
                               if (snapshot.connectionState ==
                                   ConnectionState.waiting) {
-                                return Center(
+                                return const Center(
                                   child: CircularProgressIndicator(
                                     color: AppColors.mainColor,
                                   ),
@@ -549,7 +549,7 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                                     style: GoogleFonts.poppins(
                                       fontWeight: FontWeight.w500,
                                       fontSize: manageWidth(context, 20),
-                                      color: Color.fromARGB(255, 180, 44, 44),
+                                      color: const Color.fromARGB(255, 180, 44, 44),
                                     ),
                                   ),
                                 );
@@ -562,7 +562,7 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                                     style: GoogleFonts.poppins(
                                       fontWeight: FontWeight.w500,
                                       fontSize: manageWidth(context, 20),
-                                      color: Color.fromARGB(255, 74, 74, 74),
+                                      color: const Color.fromARGB(255, 74, 74, 74),
                                     ),
                                   ),
                                 );
@@ -633,7 +633,7 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                                           height: manageHeight(context, 22),
                                           width: manageWidth(context, 22),
                                           decoration: BoxDecoration(
-                                            color: Color.fromARGB(
+                                            color: const Color.fromARGB(
                                                     255, 218, 215, 215)
                                                 .withOpacity(0.6),
                                             borderRadius: BorderRadius.circular(
@@ -664,7 +664,7 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                                                             FontWeight.w500,
                                                         fontSize: manageWidth(
                                                             context, 15),
-                                                        color: Color.fromARGB(
+                                                        color: const Color.fromARGB(
                                                             255, 74, 74, 74),
                                                       ),
                                                     ),
@@ -699,7 +699,7 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                                               context: context,
                                               builder: (BuildContext context) {
                                                 return AlertDialog(
-                                                  title: Text('Confirmation'),
+                                                  title: const Text('Confirmation'),
                                                   content: Text(
                                                     'Êtes-vous sûr de vouloir supprimer cet élément ?',
                                                     style: TextStyle(
@@ -708,14 +708,14 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                                                   ),
                                                   actions: <Widget>[
                                                     TextButton(
-                                                      child: Text('Non'),
+                                                      child: const Text('Non'),
                                                       onPressed: () {
                                                         Navigator.of(context)
                                                             .pop();
                                                       },
                                                     ),
                                                     TextButton(
-                                                      child: Text('Oui'),
+                                                      child: const Text('Oui'),
                                                       onPressed: () async {
                                                         var imagesNames = service
                                                             .images
@@ -751,7 +751,7 @@ class _ServiceProviderProfilPageState extends State<ServiceProviderProfilPage> {
                                           if (value == 'modifier') {
                                             if (kIsWeb) {
                                               ScaffoldMessenger.of(context)
-                                                  .showSnackBar(SnackBar(
+                                                  .showSnackBar(const SnackBar(
                                                 content: Text(
                                                   "Vous devez télécharger l'application mobile",
                                                   style: TextStyle(

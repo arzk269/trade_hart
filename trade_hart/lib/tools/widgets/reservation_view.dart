@@ -18,7 +18,7 @@ import 'package:http/http.dart' as http;
 
 class ReservationView extends StatefulWidget {
   final Reservation reservation;
-  ReservationView({super.key, required this.reservation});
+  const ReservationView({super.key, required this.reservation});
 
   @override
   State<ReservationView> createState() => _ReservationViewState();
@@ -216,6 +216,8 @@ class _ReservationViewState extends State<ReservationView> {
                                         height: manageHeight(context, 150),
                                         width: manageWidth(context, 165),
                                         child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
                                             Icon(
                                               CupertinoIcons
@@ -223,8 +225,6 @@ class _ReservationViewState extends State<ReservationView> {
                                               size: manageWidth(context, 20),
                                             ),
                                           ],
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
                                         )),
                               )),
                         ),
@@ -478,7 +478,7 @@ class _ReservationViewState extends State<ReservationView> {
                   ),
                   Row(
                     children: widget.reservation.creneau == null
-                        ? [SizedBox()]
+                        ? [const SizedBox()]
                         : [
                             Text(
                               "Créneau :",
@@ -596,7 +596,7 @@ class _ReservationViewState extends State<ReservationView> {
                                                             child: ClipRRect(
                                                                 // Couleur de fond avec opacité réduite
                                                                 borderRadius:
-                                                                    BorderRadius
+                                                                    const BorderRadius
                                                                         .only(
                                                                   topLeft: Radius
                                                                       .circular(
@@ -757,7 +757,7 @@ class _ReservationViewState extends State<ReservationView> {
                                                                         ]))));
                                                       });
                                                 },
-                                                child: Text(
+                                                child: const Text(
                                                     "Prestation terminée?"),
                                               )
                                             : null,
@@ -768,7 +768,7 @@ class _ReservationViewState extends State<ReservationView> {
                       ], // end ListView children
                     ),
                   ),
-                  Divider() // end SizedBox
+                  const Divider() // end SizedBox
                 ], // end Column children
               ));
         });

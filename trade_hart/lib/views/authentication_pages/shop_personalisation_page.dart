@@ -35,7 +35,7 @@ class _ShopPersonnalisationPageState extends State<ShopPersonnalisationPage> {
     if (pickedFile != null) {
       var croppedFile = await ImageCropper().cropImage(
         sourcePath: pickedFile.path,
-        aspectRatio: CropAspectRatio(ratioX: 0.98 * 360, ratioY: 0.3 * 725),
+        aspectRatio: const CropAspectRatio(ratioX: 0.98 * 360, ratioY: 0.3 * 725),
         compressQuality: 100,
       );
 

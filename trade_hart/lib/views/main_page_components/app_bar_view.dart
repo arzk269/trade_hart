@@ -21,7 +21,7 @@ AppBar appBar(BuildContext context) {
           onTap: () {
             Navigator.push(context, MaterialPageRoute(
               builder: (context) {
-                return CartPage();
+                return const CartPage();
               },
             ));
           },
@@ -43,7 +43,7 @@ AppBar appBar(BuildContext context) {
                       borderRadius:
                           BorderRadius.circular(manageWidth(context, 7.75))),
                   child: Container(
-                    margin: EdgeInsets.only(top: 0),
+                    margin: const EdgeInsets.only(top: 0),
                     height: manageWidth(context, 12.5),
                     width: manageWidth(context, 12.5),
                     decoration: BoxDecoration(
@@ -86,7 +86,7 @@ class AppBarView {
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(
                   builder: (context) {
-                    return CartPage();
+                    return const CartPage();
                   },
                 ));
               },

@@ -154,7 +154,7 @@ class _ServiceProviderPersonalizationPageState
     if (pickedFile != null) {
       var croppedFile = await ImageCropper().cropImage(
         sourcePath: pickedFile.path,
-        aspectRatio: CropAspectRatio(ratioX: 0.98 * 360, ratioY: 0.3 * 725),
+        aspectRatio: const CropAspectRatio(ratioX: 0.98 * 360, ratioY: 0.3 * 725),
         compressQuality: 100,
       );
 
@@ -171,7 +171,7 @@ class _ServiceProviderPersonalizationPageState
     if (pickedFile != null) {
       var croppedFile = await ImageCropper().cropImage(
         sourcePath: pickedFile.path,
-        aspectRatio: CropAspectRatio(ratioX: 0.98 * 360, ratioY: 0.3 * 725),
+        aspectRatio: const CropAspectRatio(ratioX: 0.98 * 360, ratioY: 0.3 * 725),
         compressQuality: 100,
       );
 
@@ -202,7 +202,7 @@ class _ServiceProviderPersonalizationPageState
                     color: Colors.white,
                     image: DecorationImage(
                       image: _coverImageFile == null
-                          ? AssetImage("images/service_provider_cover.png")
+                          ? const AssetImage("images/service_provider_cover.png")
                           : coverUrl.isEmpty
                               ? FileImage(_coverImageFile!) as ImageProvider
                               : NetworkImage(coverUrl),
@@ -296,7 +296,7 @@ class _ServiceProviderPersonalizationPageState
                       );
                     },
                     child: CircleAvatar(
-                      backgroundColor: Color.fromARGB(255, 228, 228, 228),
+                      backgroundColor: const Color.fromARGB(255, 228, 228, 228),
                       radius: manageWidth(context, 15),
                       child: Icon(CupertinoIcons.add,
                           size: manageWidth(context, 16)),
@@ -428,7 +428,7 @@ class _ServiceProviderPersonalizationPageState
                       );
                     },
                     child: CircleAvatar(
-                      backgroundColor: Color.fromARGB(255, 228, 228, 228),
+                      backgroundColor: const Color.fromARGB(255, 228, 228, 228),
                       radius: manageWidth(context, 15 * 0.7),
                       child: Icon(CupertinoIcons.add,
                           size: manageWidth(context, 16 * 0.7)),
@@ -482,7 +482,7 @@ class _ServiceProviderPersonalizationPageState
                 });
                 if (descriptionController.text.isEmpty ||
                     experienceYearsController.text.isEmpty) {
-                  var snackBar = SnackBar(
+                  var snackBar = const SnackBar(
                     content: Text("veuillez remplir tous les champs"),
                     backgroundColor: Colors.red,
                   );
@@ -492,7 +492,7 @@ class _ServiceProviderPersonalizationPageState
                   });
                 } else if (_profilImageFile == null ||
                     _coverImageFile == null) {
-                  var snackBar = SnackBar(
+                  var snackBar = const SnackBar(
                     content: Text(
                         "veuillez importer les images de profil et de couverture"),
                     backgroundColor: Colors.red,

@@ -16,7 +16,7 @@ import 'package:trade_hart/views/authentication_pages/widgets/size_selector.dart
 
 class NetworkColorSizeAddPage extends StatefulWidget {
   final String color;
-  NetworkColorSizeAddPage({super.key, required this.color});
+  const NetworkColorSizeAddPage({super.key, required this.color});
 
   @override
   State<NetworkColorSizeAddPage> createState() =>

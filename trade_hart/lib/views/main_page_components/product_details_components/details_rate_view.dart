@@ -5,7 +5,7 @@ import 'package:trade_hart/size_manager.dart';
 class DetailsRateStars extends StatelessWidget {
   final int rate;
   final int nbRates;
-  DetailsRateStars({super.key, required this.rate, required this.nbRates});
+  const DetailsRateStars({super.key, required this.rate, required this.nbRates});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class DetailsRateStars extends StatelessWidget {
             ),
             Text("$nbRates avis",
                 style: GoogleFonts.workSans(
-                  color: Color.fromARGB(255, 102, 102, 102),
+                  color: const Color.fromARGB(255, 102, 102, 102),
                   fontSize: manageWidth(context, 11),
                 )),
           ],
@@ -52,7 +52,7 @@ class DetailsRateStars extends StatelessWidget {
             ),
             Text("$nbRates avis",
                 style: GoogleFonts.workSans(
-                  color: Color.fromARGB(255, 102, 102, 102),
+                  color: const Color.fromARGB(255, 102, 102, 102),
                   fontSize: manageWidth(context, 11),
                 )),
           ],
@@ -76,7 +76,7 @@ class DetailsRateStars extends StatelessWidget {
             ),
             Text("$nbRates avis",
                 style: GoogleFonts.workSans(
-                  color: Color.fromARGB(255, 102, 102, 102),
+                  color: const Color.fromARGB(255, 102, 102, 102),
                   fontSize: manageWidth(context, 11),
                 )),
           ],
@@ -100,7 +100,7 @@ class DetailsRateStars extends StatelessWidget {
             ),
             Text("$nbRates avis",
                 style: GoogleFonts.workSans(
-                  color: Color.fromARGB(255, 102, 102, 102),
+                  color: const Color.fromARGB(255, 102, 102, 102),
                   fontSize: manageWidth(context, 12.5),
                 )),
           ],
@@ -124,7 +124,7 @@ class DetailsRateStars extends StatelessWidget {
             ),
             Text("$nbRates avis",
                 style: GoogleFonts.workSans(
-                  color: Color.fromARGB(255, 102, 102, 102),
+                  color: const Color.fromARGB(255, 102, 102, 102),
                   fontSize: manageWidth(context, 11),
                 )),
           ],
@@ -148,7 +148,7 @@ class DetailsRateStars extends StatelessWidget {
             ),
             Text("$nbRates avis",
                 style: GoogleFonts.workSans(
-                  color: Color.fromARGB(255, 102, 102, 102),
+                  color: const Color.fromARGB(255, 102, 102, 102),
                   fontSize: manageWidth(context, 11),
                 )),
           ],
@@ -168,7 +168,7 @@ class DetailsRateStars extends StatelessWidget {
         ),
         Text("$nbRates avis",
             style: GoogleFonts.workSans(
-              color: Color.fromARGB(255, 102, 102, 102),
+              color: const Color.fromARGB(255, 102, 102, 102),
               fontSize: manageWidth(context, 11),
             )),
       ],

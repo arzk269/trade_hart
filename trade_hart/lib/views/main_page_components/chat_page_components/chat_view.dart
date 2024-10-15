@@ -40,7 +40,7 @@ class ChatView extends StatelessWidget {
                   radius: manageWidth(context, 25),
                   backgroundColor: Colors.grey.withOpacity(0.3),
                   child: profilImage == null
-                      ? Icon(CupertinoIcons.person)
+                      ? const Icon(CupertinoIcons.person)
                       : ClipRRect(
                           borderRadius:
                               BorderRadius.circular(manageWidth(context, 25)),
@@ -55,14 +55,14 @@ class ChatView extends StatelessWidget {
                                       height: manageHeight(context, 150),
                                       width: manageWidth(context, 165),
                                       child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Icon(
                                             CupertinoIcons.person,
                                             size: manageWidth(context, 25),
                                           ),
                                         ],
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
                                       )),
                             ),
                           ),
@@ -73,7 +73,7 @@ class ChatView extends StatelessWidget {
             title: Row(
               children: [
                 ProductNameView(name: name, size: manageWidth(context, 16)),
-                Spacer(),
+                const Spacer(),
                 ProductNameView(
                   name: time,
                   size: manageWidth(context, 14.5),

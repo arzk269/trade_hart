@@ -8,7 +8,7 @@ class SubCategoryPage extends StatefulWidget {
   final int subcategory;
   final String filter;
   final List<String> subFilters;
-  SubCategoryPage(
+  const SubCategoryPage(
       {super.key,
       required this.filter,
       required this.subFilters,
@@ -23,7 +23,7 @@ class _SubCategoryPageState extends State<SubCategoryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            leading: MainBackButton(),
+            leading: const MainBackButton(),
             title: AppBarTitleText(
               title: widget.filter,
               size: manageWidth(context, 23),

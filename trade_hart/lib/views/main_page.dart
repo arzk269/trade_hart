@@ -33,17 +33,17 @@ class MainPage extends StatelessWidget {
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Scaffold(
+              return const Scaffold(
                 body: Center(
                   child: CircularProgressIndicator(),
                 ),
               );
             } else if (snapshot.hasData && snapshot.data != null) {
               print(snapshot.data!.email);
-              return MainPageContent();
+              return const MainPageContent();
             }
 
-            return LoginPage();
+            return const LoginPage();
           }),
     );
   }
@@ -179,7 +179,7 @@ class _MainPageContentState extends State<MainPageContent> {
       const HomePage(),
       MainChatPage(),
       WishListPage(),
-      ProfilePage(),
+      const ProfilePage(),
     ];
     List<String> titles = const ["TradHart", "Chat", "Wish List", "Profil"];
 
@@ -196,8 +196,7 @@ class _MainPageContentState extends State<MainPageContent> {
                 alignment: Alignment.topCenter,
                 children: [
                   Padding(
-                    padding:
-                        EdgeInsets.only(bottom: manageHeight(context, 15.0)),
+                    padding: const EdgeInsets.only(top: 7),
                     child: Icon(
                       icon,
                       color: Provider.of<MainProvider>(context).currentIndex ==
@@ -208,11 +207,11 @@ class _MainPageContentState extends State<MainPageContent> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: manageHeight(context, 22)),
+                    padding: const EdgeInsets.only(top:35),
                     child: Text(
                       label,
                       style: TextStyle(
-                          fontSize: 10,
+                          fontSize: manageWidth(context, 10),
                           color:
                               Provider.of<MainProvider>(context).currentIndex ==
                                       index
@@ -246,8 +245,7 @@ class _MainPageContentState extends State<MainPageContent> {
                         );
                         return Padding(
                           padding: EdgeInsets.only(
-                              bottom: manageHeight(context, 15.0),
-                              right: manageWidth(context, 10.0)),
+                            top: 7, right: manageWidth(context, 10.0)),
                           child: CircleAvatar(
                             radius: manageWidth(context, 5),
                             backgroundColor:
@@ -262,8 +260,7 @@ class _MainPageContentState extends State<MainPageContent> {
                     alignment: Alignment.topCenter,
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(
-                            bottom: manageHeight(context, 15.0)),
+                        padding: const EdgeInsets.only(top: 7),
                         child: Icon(
                           icon,
                           color:
@@ -275,12 +272,11 @@ class _MainPageContentState extends State<MainPageContent> {
                         ),
                       ),
                       Padding(
-                        padding:
-                            EdgeInsets.only(top: manageHeight(context, 22)),
+                        padding: const EdgeInsets.only(top: 35),
                         child: Text(
                           label,
                           style: TextStyle(
-                              fontSize: 10,
+                              fontSize: manageWidth(context, 10),
                               color: Provider.of<MainProvider>(context)
                                           .currentIndex ==
                                       index
@@ -337,7 +333,7 @@ class _MainPageContentState extends State<MainPageContent> {
                                   bool alldone = snapshot.data!.docs.isEmpty;
                                   return Padding(
                                     padding: EdgeInsets.only(
-                                        bottom: manageHeight(context, 15.0),
+                                        top: 7,
                                         right: manageWidth(context, 10.0)),
                                     child: CircleAvatar(
                                       radius: 3.5,
@@ -382,7 +378,7 @@ class _MainPageContentState extends State<MainPageContent> {
                                       snapshot2.data!.docs.isEmpty;
                                   return Padding(
                                     padding: EdgeInsets.only(
-                                        bottom: manageHeight(context, 15.0),
+                                        top: 7,
                                         right: manageWidth(context, 10.0)),
                                     child: CircleAvatar(
                                       radius: manageWidth(context, 3.5),
@@ -400,8 +396,7 @@ class _MainPageContentState extends State<MainPageContent> {
                     alignment: Alignment.topCenter,
                     children: [
                       Padding(
-                        padding:
-                            EdgeInsets.only(bottom: manageHeight(context, 15)),
+                        padding: const EdgeInsets.only(top: 7),
                         child: Icon(
                           icon,
                           color:
@@ -413,12 +408,11 @@ class _MainPageContentState extends State<MainPageContent> {
                         ),
                       ),
                       Padding(
-                          padding:
-                              EdgeInsets.only(top: manageHeight(context, 22)),
+                          padding: const EdgeInsets.only(top: 35),
                           child: Text(
                             label,
                             style: TextStyle(
-                                fontSize: 10,
+                                fontSize: manageWidth(context, 10),
                                 color: Provider.of<MainProvider>(context)
                                             .currentIndex ==
                                         index
@@ -429,6 +423,7 @@ class _MainPageContentState extends State<MainPageContent> {
                   ),
       );
     }
+
 
     return Scaffold(
       appBar: AppBarView(
@@ -444,7 +439,7 @@ class _MainPageContentState extends State<MainPageContent> {
           buildCupertinoTabBarItem(CupertinoIcons.chat_bubble, "Chat", 1),
           buildCupertinoTabBarItem(CupertinoIcons.heart, "Wish List", 2),
           buildCupertinoTabBarItem(CupertinoIcons.person, "Profil", 3),
-        ],
+        ],height:50,
         currentIndex: Provider.of<MainProvider>(context).currentIndex,
         onTap: (index) {
           // Utilisation de Provider pour mettre à jour l'état global

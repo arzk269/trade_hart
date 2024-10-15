@@ -51,7 +51,7 @@ class _ProviderReservationsPageState extends State<ProviderReservationsPage> {
                   .snapshots(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             }
@@ -75,30 +75,30 @@ class _ProviderReservationsPageState extends State<ProviderReservationsPage> {
                     ),
                     DropdownButton(
                       hint: Text(filter),
-                      items: [
+                      items: const [
                         DropdownMenuItem(
-                          child: Text("Toutes"),
                           value: "Toutes",
+                          child: Text("Toutes"),
                         ),
                         DropdownMenuItem(
-                          child: Text("En cours de traitement"),
                           value: "En cours de traitement",
+                          child: Text("En cours de traitement"),
                         ),
                         DropdownMenuItem(
-                          child: Text("Confirmée(s)"),
                           value: "Confirmé",
+                          child: Text("Confirmée(s)"),
                         ),
                         DropdownMenuItem(
-                          child: Text("Terminée(s)"),
                           value: "Terminé",
+                          child: Text("Terminée(s)"),
                         ),
                         DropdownMenuItem(
-                          child: Text("Annulée(s)"),
                           value: "Annulé",
+                          child: Text("Annulée(s)"),
                         ),
                         DropdownMenuItem(
-                          child: Text("Signalée(s)"),
                           value: "Signalé",
+                          child: Text("Signalée(s)"),
                         ),
                       ],
                       onChanged: (value) {

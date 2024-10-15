@@ -75,7 +75,7 @@ class _FollowersPageState extends State<FollowersPage> {
                           }
                           var user = snapshot2.data!;
                           if (!user.exists) {
-                            return SizedBox();
+                            return const SizedBox();
                           }
                           var userData = user.data();
                           return Padding(

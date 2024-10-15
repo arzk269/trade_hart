@@ -18,7 +18,7 @@ import 'package:trade_hart/views/main_page_components/pages/service_detail_page.
 
 class ServiceProviderPage extends StatefulWidget {
   final String? id;
-  ServiceProviderPage({super.key, this.id});
+  const ServiceProviderPage({super.key, this.id});
 
   @override
   State<ServiceProviderPage> createState() => _ServiceProviderPageState();
@@ -43,7 +43,7 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
             'wishlist': FieldValue.arrayUnion([articleID])
           });
 
-          var snackBar = SnackBar(
+          var snackBar = const SnackBar(
             content: Text("Service ajouté dans la Wish List"),
             backgroundColor: Colors.green,
           );
@@ -51,7 +51,7 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
           // ignore: use_build_context_synchronously
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
         } else {
-          var snackBar = SnackBar(
+          var snackBar = const SnackBar(
             content: Text("Cette service est déjà dans votre Wish List"),
             backgroundColor: Colors.red,
           );
@@ -61,7 +61,7 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
         }
       }
     } catch (error) {
-      var snackBar = SnackBar(
+      var snackBar = const SnackBar(
         content: Text(
             "Une erreur s'est produite, impossible de poursuivre cette action."),
         backgroundColor: Colors.red,
@@ -90,7 +90,7 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
             if (widget.id == null) {
               Navigator.pushAndRemoveUntil(
                   (context),
-                  MaterialPageRoute(builder: (context) => MainPage()),
+                  MaterialPageRoute(builder: (context) => const MainPage()),
                   (Route<dynamic> route) => false);
             } else {
               Navigator.pop(context);
@@ -148,6 +148,7 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
                                     borderRadius: BorderRadius.circular(
                                         manageWidth(context, 10)),
                                     child: InstaImageViewer(
+                                      imageUrl: images["cover image"],
                                       child: Image.network(
                                           images["cover image"],
                                           fit: BoxFit.cover, errorBuilder:
@@ -178,7 +179,6 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
                                                   MainAxisAlignment.center,
                                             ));
                                       }),
-                                      imageUrl: images["cover image"],
                                     ),
                                   ),
                                 ),
@@ -219,6 +219,7 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
                                           borderRadius: BorderRadius.circular(
                                               manageWidth(context, 50 * 0.7)),
                                           child: InstaImageViewer(
+                                            imageUrl: images["profil image"],
                                             child: Image.network(
                                                 images["profil image"],
                                                 fit: BoxFit.cover, errorBuilder:
@@ -243,7 +244,6 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
                                                             .center,
                                                   ));
                                             }),
-                                            imageUrl: images["profil image"],
                                           ),
                                         ),
                                       ),
@@ -263,12 +263,12 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
                             Text(
                               service["name"],
                               style: GoogleFonts.poppins(
-                                color: Color.fromARGB(255, 74, 74, 74),
+                                color: const Color.fromARGB(255, 74, 74, 74),
                                 fontWeight: FontWeight.w500,
                                 fontSize: manageWidth(context, 17),
                               ),
                             ),
-                            Spacer(),
+                            const Spacer(),
                             GestureDetector(
                               onTap: () async {
                                 var ref1 = await FirebaseFirestore.instance
@@ -299,7 +299,7 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
                                         FirebaseAuth.instance.currentUser!.uid
                                   });
                                   ScaffoldMessenger.of(context)
-                                      .showSnackBar(SnackBar(
+                                      .showSnackBar(const SnackBar(
                                     backgroundColor: Colors.green,
                                     content: Text(
                                       "Prestataire ajouté à ceux que vous suivez!",
@@ -342,7 +342,7 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
                                       .doc(id2)
                                       .delete();
                                   ScaffoldMessenger.of(context)
-                                      .showSnackBar(SnackBar(
+                                      .showSnackBar(const SnackBar(
                                     backgroundColor: Colors.red,
                                     content: Text(
                                       "Prestataire retiré de ceux que vous suivez.",
@@ -500,7 +500,7 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
                                 ],
                               ),
                             ),
-                            Spacer(),
+                            const Spacer(),
                             GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -648,7 +648,7 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
                                 ),
                               ),
                             ),
-                            Spacer(),
+                            const Spacer(),
                             IconButton(
                                 onPressed: () {
                                   LinkProviderService().shareLink(
@@ -661,7 +661,7 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
                                       '/ProviderPage',
                                       images["profil image"]);
                                 },
-                                icon: Icon(Icons.ios_share))
+                                icon: const Icon(Icons.ios_share))
                           ],
                         ),
                         Padding(
@@ -680,7 +680,7 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
                               style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w500,
                                 fontSize: manageWidth(context, 15),
-                                color: Color.fromARGB(255, 159, 102, 156),
+                                color: const Color.fromARGB(255, 159, 102, 156),
                               )),
                         ),
                         SizedBox(
@@ -694,7 +694,7 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
                               style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w600,
                                 fontSize: manageWidth(context, 15),
-                                color: Color.fromARGB(255, 74, 74, 74),
+                                color: const Color.fromARGB(255, 74, 74, 74),
                               )),
                         ),
                         SizedBox(
@@ -707,7 +707,7 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
                               style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w500,
                                 fontSize: manageWidth(context, 19),
-                                color: Color.fromARGB(255, 74, 74, 74),
+                                color: const Color.fromARGB(255, 74, 74, 74),
                               )),
                         ),
                         Container(
@@ -731,7 +731,7 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
                                 color: Colors.grey.withOpacity(0.3),
                                 spreadRadius: 1.5,
                                 blurRadius: 5,
-                                offset: Offset(0, 2),
+                                offset: const Offset(0, 2),
                               ),
                             ],
                           ),
@@ -744,7 +744,7 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
                               builder: (context, snapshot) {
                                 if (snapshot.connectionState ==
                                     ConnectionState.waiting) {
-                                  return Center(
+                                  return const Center(
                                       child: CircularProgressIndicator(
                                     color: AppColors.mainColor,
                                   ));
@@ -756,7 +756,7 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
                                           fontWeight: FontWeight.w500,
                                           fontSize: manageWidth(context, 20),
                                           color:
-                                              Color.fromARGB(255, 180, 44, 44),
+                                              const Color.fromARGB(255, 180, 44, 44),
                                         )),
                                   );
                                 }
@@ -768,7 +768,7 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
                                           fontWeight: FontWeight.w500,
                                           fontSize: manageWidth(context, 20),
                                           color:
-                                              Color.fromARGB(255, 74, 74, 74),
+                                              const Color.fromARGB(255, 74, 74, 74),
                                         )),
                                   );
                                 }
@@ -838,7 +838,7 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
                                                   if (snapshot
                                                           .connectionState ==
                                                       ConnectionState.waiting) {
-                                                    return HomeAddToFavorite(
+                                                    return const HomeAddToFavorite(
                                                         color: Colors.grey);
                                                   }
                                                   var data =
@@ -854,7 +854,7 @@ class _ServiceProviderPageState extends State<ServiceProviderPage> {
                                                                   as List)
                                                               .contains(
                                                                   service.id)
-                                                          ? Color.fromARGB(164,
+                                                          ? const Color.fromARGB(164,
                                                               253, 120, 162)
                                                           : Colors.blueGrey,
                                                     ),

@@ -19,7 +19,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class SellerCommandView extends StatefulWidget {
   final Command command;
-  SellerCommandView({super.key, required this.command});
+  const SellerCommandView({super.key, required this.command});
 
   @override
   State<SellerCommandView> createState() => _SellerCommandViewState();
@@ -126,7 +126,7 @@ class _SellerCommandViewState extends State<SellerCommandView> {
     } catch (error) {
       // Afficher une snackbar en cas d'échec
       // ignore: use_build_context_synchronously
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           content: Text(
               'Une erreur est survenue lors de la confirmation de l\'annulation de cette commande.',
               style: TextStyle(color: Colors.white)),
@@ -239,7 +239,7 @@ class _SellerCommandViewState extends State<SellerCommandView> {
     } catch (error) {
       // Afficher une snackbar en cas d'échec
       // ignore: use_build_context_synchronously
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           content: Text(
               'Une erreur est survenue lors de l\'annulation de cette commande.',
               style: TextStyle(color: Colors.white)),
@@ -375,7 +375,7 @@ class _SellerCommandViewState extends State<SellerCommandView> {
     } catch (error) {
       // Afficher une snackbar en cas d'échec
       // ignore: use_build_context_synchronously
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           content: Text(
               'Une erreur est survenue lors de la confirmation de l\'expédition.',
               style: TextStyle(color: Colors.white)),
@@ -490,7 +490,7 @@ class _SellerCommandViewState extends State<SellerCommandView> {
     } catch (error) {
       // Afficher une snackbar en cas d'échec
       // ignore: use_build_context_synchronously
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           content: Text(
               'Une erreur est survenue lors de la confirmation de l\'expédition.',
               style: TextStyle(color: Colors.white)),
@@ -639,6 +639,8 @@ class _SellerCommandViewState extends State<SellerCommandView> {
                                       height: manageHeight(context, 150),
                                       width: manageWidth(context, 165),
                                       child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Icon(
                                             CupertinoIcons
@@ -646,8 +648,6 @@ class _SellerCommandViewState extends State<SellerCommandView> {
                                             size: manageWidth(context, 20),
                                           ),
                                         ],
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
                                       )),
                             )),
                       ),
@@ -951,7 +951,7 @@ class _SellerCommandViewState extends State<SellerCommandView> {
                                                 0.8), // Ajustez le flou selon vos préférences
                                         child: ClipRRect(
                                           // Couleur de fond avec opacité réduite
-                                          borderRadius: BorderRadius.only(
+                                          borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(20),
                                             topRight: Radius.circular(20),
                                           ),
@@ -1024,7 +1024,7 @@ class _SellerCommandViewState extends State<SellerCommandView> {
                                                                     Colors.red),
                                                       ),
                                                     ),
-                                                    Spacer(),
+                                                    const Spacer(),
                                                     TextButton(
                                                       onPressed: () {
                                                         FirebaseFirestore
@@ -1091,7 +1091,7 @@ class _SellerCommandViewState extends State<SellerCommandView> {
                                                 0.8), // Ajustez le flou selon vos préférences
                                         child: ClipRRect(
                                           // Couleur de fond avec opacité réduite
-                                          borderRadius: BorderRadius.only(
+                                          borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(20),
                                             topRight: Radius.circular(20),
                                           ),
@@ -1160,7 +1160,7 @@ class _SellerCommandViewState extends State<SellerCommandView> {
                                                         ),
                                                       ),
                                                     ),
-                                                    Spacer(),
+                                                    const Spacer(),
                                                     TextButton(
                                                       onPressed: () {
                                                         Navigator.pop(context);
@@ -1626,7 +1626,7 @@ class _SellerCommandViewState extends State<SellerCommandView> {
                                           print('Could not launch $url');
                                         }
                                       },
-                                      child: Text("Un problème?"),
+                                      child: const Text("Un problème?"),
                                     )
                                   : null,
                             )
@@ -1636,7 +1636,7 @@ class _SellerCommandViewState extends State<SellerCommandView> {
                     ], // end ListView children
                   ),
                 ),
-                Divider() // end SizedBox
+                const Divider() // end SizedBox
               ], // end Column children
             ),
           );

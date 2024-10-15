@@ -196,6 +196,8 @@ class _NetworkColorAddPageState extends State<NetworkColorAddPage> {
                                       height: manageHeight(context, 150),
                                       width: manageWidth(context, 165),
                                       child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Icon(
                                             CupertinoIcons
@@ -203,8 +205,6 @@ class _NetworkColorAddPageState extends State<NetworkColorAddPage> {
                                             size: manageWidth(context, 15),
                                           ),
                                         ],
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
                                       )),
                             ),
                           ),

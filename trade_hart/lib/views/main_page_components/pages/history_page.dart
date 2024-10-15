@@ -24,7 +24,7 @@ class _HistoryPageState extends State<HistoryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: AppBarTitleText(title: "Historique", size: 18),
+        title: const AppBarTitleText(title: "Historique", size: 18),
       ),
       body: Column(
         children: [
@@ -44,7 +44,7 @@ class _HistoryPageState extends State<HistoryPage> {
                         });
                         navScrollController.animateTo(
                           navScrollController.position.minScrollExtent,
-                          duration: Duration(milliseconds: 100),
+                          duration: const Duration(milliseconds: 100),
                           curve: Curves.decelerate,
                         );
                       },
@@ -57,14 +57,14 @@ class _HistoryPageState extends State<HistoryPage> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 15),
+                      margin: const EdgeInsets.only(left: 15),
                       width: 55,
                       height: 5,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(2.5),
                           color: navIndex != 0
                               ? Colors.transparent
-                              : Color.fromARGB(200, 87, 199, 197)),
+                              : const Color.fromARGB(200, 87, 199, 197)),
                     )
                   ],
                 ),
@@ -86,14 +86,14 @@ class _HistoryPageState extends State<HistoryPage> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 15),
+                      margin: const EdgeInsets.only(left: 15),
                       width: 55,
                       height: 5,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(2.5),
                           color: navIndex != 1
                               ? Colors.transparent
-                              : Color.fromARGB(200, 87, 199, 197)),
+                              : const Color.fromARGB(200, 87, 199, 197)),
                     )
                   ],
                 ),
@@ -107,7 +107,7 @@ class _HistoryPageState extends State<HistoryPage> {
                         });
                         navScrollController.animateTo(
                           navScrollController.position.maxScrollExtent,
-                          duration: Duration(milliseconds: 500),
+                          duration: const Duration(milliseconds: 500),
                           curve: Curves.easeInOut,
                         );
                       },
@@ -120,14 +120,14 @@ class _HistoryPageState extends State<HistoryPage> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 15),
+                      margin: const EdgeInsets.only(left: 15),
                       width: 70,
                       height: 5,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(2.5),
                           color: navIndex != 2
                               ? Colors.transparent
-                              : Color.fromARGB(200, 87, 199, 197)),
+                              : const Color.fromARGB(200, 87, 199, 197)),
                     )
                   ],
                 ),
@@ -141,7 +141,7 @@ class _HistoryPageState extends State<HistoryPage> {
                         });
                         navScrollController.animateTo(
                           navScrollController.position.maxScrollExtent,
-                          duration: Duration(milliseconds: 500),
+                          duration: const Duration(milliseconds: 500),
                           curve: Curves.easeInOut,
                         );
                       },
@@ -154,21 +154,21 @@ class _HistoryPageState extends State<HistoryPage> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 15),
+                      margin: const EdgeInsets.only(left: 15),
                       width: 150,
                       height: 5,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(2.5),
                           color: navIndex != 3
                               ? Colors.transparent
-                              : Color.fromARGB(200, 87, 199, 197)),
+                              : const Color.fromARGB(200, 87, 199, 197)),
                     ),
                   ],
                 ),
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           StreamBuilder(
@@ -188,9 +188,9 @@ class _HistoryPageState extends State<HistoryPage> {
                   .snapshots(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return CircularProgressIndicator();
+                  return const CircularProgressIndicator();
                 } else if (snapshot.data!.docs.isEmpty || !snapshot.hasData) {
-                  return AppBarTitleText(title: "Historique vide", size: 15.5);
+                  return const AppBarTitleText(title: "Historique vide", size: 15.5);
                 }
                 // } else if (!snapshot.hasError) {
                 //   return AppBarTitleText(
@@ -228,15 +228,15 @@ class _HistoryPageState extends State<HistoryPage> {
                                 },
                                 child: Text(
                                   item["name"],
-                                  style: TextStyle(fontSize: 17),
+                                  style: const TextStyle(fontSize: 17),
                                   overflow: TextOverflow.ellipsis,
                                 )),
-                            Spacer(),
+                            const Spacer(),
                             IconButton(
                                 onPressed: () {
                                   e.reference.delete();
                                 },
-                                icon: Icon(
+                                icon: const Icon(
                                   CupertinoIcons.clear,
                                   size: 18,
                                 ))

@@ -132,7 +132,7 @@ class _ReservationProblemPageState extends State<ReservationProblemPage> {
     } catch (error) {
       // Afficher une snackbar en cas d'échec
       // ignore: use_build_context_synchronously
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           content: Text('Une erreur est survenue. Veuillez réessayer',
               style: TextStyle(color: Colors.white)),
           backgroundColor: Colors.red));
@@ -146,7 +146,7 @@ class _ReservationProblemPageState extends State<ReservationProblemPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: AppBarTitleText(title: "Signalement d'un problème", size: 17.5),
+        title: const AppBarTitleText(title: "Signalement d'un problème", size: 17.5),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -171,8 +171,8 @@ class _ReservationProblemPageState extends State<ReservationProblemPage> {
               height: manageHeight(context, 50),
             ),
             Container(
-                margin: EdgeInsets.symmetric(horizontal: 20),
-                padding: EdgeInsets.symmetric(horizontal: 15),
+                margin: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 width: manageWidth(context, 335),
                 // Ajuster la hauteur selon vos besoins
                 decoration: BoxDecoration(
@@ -181,7 +181,7 @@ class _ReservationProblemPageState extends State<ReservationProblemPage> {
                       BorderRadius.circular(manageHeight(context, 20)),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: TextField(
                     controller: commentController,
                     maxLines:
@@ -197,7 +197,7 @@ class _ReservationProblemPageState extends State<ReservationProblemPage> {
             GestureDetector(
               onTap: () async {
                 if (commentController.text.isEmpty) {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                     content: Text(
                       "Veuillez écrire votre message",
                       style: TextStyle(color: Colors.white),

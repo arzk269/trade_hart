@@ -9,7 +9,7 @@ import 'package:trade_hart/views/main_page_components/home_page_components/selec
 import 'package:trade_hart/views/main_page_components/wish_list_page_components/wish_feed.dart';
 
 class WishListPage extends StatefulWidget {
-  WishListPage({super.key});
+  const WishListPage({super.key});
 
   @override
   State<WishListPage> createState() => _WishListPageState();

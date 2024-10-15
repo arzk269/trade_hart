@@ -6,7 +6,7 @@ import 'package:trade_hart/tools/widgets/app_bar_title_text.dart';
 import 'package:trade_hart/views/authentication_pages/widgets/auth_textfield.dart';
 
 class InformationPage extends StatefulWidget {
-  InformationPage({super.key});
+  const InformationPage({super.key});
   @override
   State<InformationPage> createState() => _InformationPageState();
 }

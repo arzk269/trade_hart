@@ -94,12 +94,11 @@ import 'package:trade_hart/model/amount_article_command_provider.dart';
 import 'package:trade_hart/model/article_size_provider.dart';
 import 'package:trade_hart/model/categories_provider.dart';
 import 'package:trade_hart/model/color_index_provider.dart';
-import 'package:trade_hart/model/colors_provider.dart';
 import 'package:trade_hart/model/conversation_provider.dart';
 import 'package:trade_hart/model/detail_article_index_provider.dart';
 import 'package:trade_hart/model/fcmtoken_provider.dart';
 import 'package:trade_hart/model/feed_provider.dart';
-import 'package:trade_hart/model/filters_provider.dart';
+import 'package:trade_hart/model/filters_provider.dart'; 
 // import 'package:trade_hart/model/link_provider_service.dart';
 import 'package:trade_hart/model/location_provider.dart';
 import 'package:trade_hart/model/notification_api.dart';
@@ -166,7 +165,6 @@ void main() async {
     runApp(MultiProvider(providers: [
       ChangeNotifierProvider(create: (_) => CategoriesProvider()),
       ChangeNotifierProvider(create: (_) => DetailsIndexProvider()),
-      ChangeNotifierProvider(create: (_) => ColorProvider()),
       ChangeNotifierProvider(create: (_) => ColorIndexProvider()),
       ChangeNotifierProvider(create: (_) => SizeIndexProvider()),
       ChangeNotifierProvider(create: (_) => ArticleSizeProvider()),

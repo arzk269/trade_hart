@@ -49,7 +49,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(
                         builder: (context) {
-                          return CartPage();
+                          return const CartPage();
                         },
                       ));
                     },

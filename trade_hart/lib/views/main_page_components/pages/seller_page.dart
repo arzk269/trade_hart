@@ -88,7 +88,7 @@ class _SellerPageState extends State<SellerPage> {
             if (widget.sellerId == null) {
               Navigator.pushAndRemoveUntil(
                   (context),
-                  MaterialPageRoute(builder: (context) => MainPage()),
+                  MaterialPageRoute(builder: (context) => const MainPage()),
                   (Route<dynamic> route) => false);
             } else {
               Navigator.pop(context);
@@ -146,6 +146,7 @@ class _SellerPageState extends State<SellerPage> {
                                     errorBuilder: (context, error, stackTrace) {
                                   return SizedBox(
                                       child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Icon(
                                         CupertinoIcons.exclamationmark_triangle,
@@ -160,7 +161,6 @@ class _SellerPageState extends State<SellerPage> {
                                         textAlign: TextAlign.center,
                                       )
                                     ],
-                                    mainAxisAlignment: MainAxisAlignment.center,
                                   ));
                                 }),
                               ),
@@ -188,13 +188,13 @@ class _SellerPageState extends State<SellerPage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => LoginPage()));
+                                    builder: (context) => const LoginPage()));
                           } else {
                             if (currentUser == null) {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => LoginPage()));
+                                      builder: (context) => const LoginPage()));
                             } else {
                               var ref1 = await FirebaseFirestore.instance
                                   .collection('Users')
@@ -757,13 +757,13 @@ class _SellerPageState extends State<SellerPage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => LoginPage()));
+                                    builder: (context) => const LoginPage()));
                           } else {
                             if (currentUser == null) {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => LoginPage()));
+                                      builder: (context) => const LoginPage()));
                             } else {
                               String currentUserId =
                                   FirebaseAuth.instance.currentUser!.uid;
@@ -882,7 +882,7 @@ class _SellerPageState extends State<SellerPage> {
                           ),
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       IconButton(
                           onPressed: () {
                             LinkProviderService().shareLink(
@@ -895,7 +895,7 @@ class _SellerPageState extends State<SellerPage> {
                                 '/SellerPage',
                                 shopData["cover image"]);
                           },
-                          icon: Icon(Icons.ios_share))
+                          icon: const Icon(Icons.ios_share))
                     ],
                   ),
 

@@ -48,7 +48,7 @@ class _UserReservationsPageState extends State<UserReservationsPage> {
                     .snapshots(),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return Center(
+                return const Center(
                   child: CircularProgressIndicator(),
                 );
               }
@@ -64,26 +64,26 @@ class _UserReservationsPageState extends State<UserReservationsPage> {
                         ),
                         DropdownButton(
                           hint: Text(filter),
-                          items: [
+                          items: const [
                             DropdownMenuItem(
-                              child: Text("Toutes"),
                               value: "Toutes",
+                              child: Text("Toutes"),
                             ),
                             DropdownMenuItem(
-                              child: Text("En cours de traitement"),
                               value: "En cours de traitement",
+                              child: Text("En cours de traitement"),
                             ),
                             DropdownMenuItem(
-                              child: Text("Confirmée(s)"),
                               value: "Confirmé",
+                              child: Text("Confirmée(s)"),
                             ),
                             DropdownMenuItem(
-                              child: Text("Terminée(s)"),
                               value: "Terminé",
+                              child: Text("Terminée(s)"),
                             ),
                             DropdownMenuItem(
-                              child: Text("Annulée(s)"),
                               value: "Annulé",
+                              child: Text("Annulée(s)"),
                             ),
                           ],
                           onChanged: (value) {
@@ -112,26 +112,26 @@ class _UserReservationsPageState extends State<UserReservationsPage> {
                       ),
                       DropdownButton(
                         hint: Text(filter),
-                        items: [
+                        items: const [
                           DropdownMenuItem(
-                            child: Text("Toutes"),
                             value: "Toutes",
+                            child: Text("Toutes"),
                           ),
                           DropdownMenuItem(
-                            child: Text("En cours de traitement"),
                             value: "En cours de traitement",
+                            child: Text("En cours de traitement"),
                           ),
                           DropdownMenuItem(
-                            child: Text("Confirmée(s)"),
                             value: "Confirmé",
+                            child: Text("Confirmée(s)"),
                           ),
                           DropdownMenuItem(
-                            child: Text("Terminée(s)"),
                             value: "Terminé",
+                            child: Text("Terminée(s)"),
                           ),
                           DropdownMenuItem(
-                            child: Text("Annulée(s)"),
                             value: "Annulé",
+                            child: Text("Annulée(s)"),
                           ),
                         ],
                         onChanged: (value) {

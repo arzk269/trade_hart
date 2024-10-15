@@ -26,7 +26,7 @@ import 'package:trade_hart/views/main_page_components/pages/service_detail_page.
 import 'package:trade_hart/views/main_page_components/wish_list_page_components/add_to_cart_buttton.dart';
 
 class WishArticlesFeed extends StatefulWidget {
-  WishArticlesFeed({super.key});
+  const WishArticlesFeed({super.key});
 
   @override
   State<WishArticlesFeed> createState() => _WishArticlesFeedState();
@@ -53,14 +53,14 @@ class _WishArticlesFeedState extends State<WishArticlesFeed> {
             'wishlist': FieldValue.arrayUnion([articleID])
           });
 
-          var snackBar = SnackBar(
+          var snackBar = const SnackBar(
             content: Text("Article ajouté dans la Wish List"),
             backgroundColor: Colors.green,
           );
 
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
         } else {
-          var snackBar = SnackBar(
+          var snackBar = const SnackBar(
             content: Text("Cette article est déjà dans votre Wish List"),
             backgroundColor: Colors.red,
           );
@@ -69,7 +69,7 @@ class _WishArticlesFeedState extends State<WishArticlesFeed> {
         }
       }
     } catch (error) {
-      var snackBar = SnackBar(
+      var snackBar = const SnackBar(
         content: Text(
             "Une erreur s'est produite, impossible de poursuivre cette action."),
         backgroundColor: Colors.red,
@@ -94,7 +94,7 @@ class _WishArticlesFeedState extends State<WishArticlesFeed> {
                 borderRadius: BorderRadius.circular(10),
               ),
               padding: EdgeInsets.all(manageWidth(context, 20)),
-              child: Text(
+              child: const Text(
                 'Stock insufisant par rapport à la quantité demandée.',
                 style: TextStyle(color: Colors.white, fontSize: 15),
               ),
@@ -106,7 +106,7 @@ class _WishArticlesFeedState extends State<WishArticlesFeed> {
 
     Overlay.of(context).insert(overlayEntry);
 
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () {
       overlayEntry.remove();
     });
   }
@@ -216,7 +216,7 @@ class _WishArticlesFeedState extends State<WishArticlesFeed> {
                                           context
                                               .read<ColorIndexProvider>()
                                               .currenColortIndex
-                                      ? Color.fromARGB(77, 129, 180, 174)
+                                      ? const Color.fromARGB(77, 129, 180, 174)
                                       : Colors.grey.withOpacity(0.2),
                                   spreadRadius: manageWidth(context, 3),
                                   blurRadius: manageWidth(context, 4),
@@ -236,6 +236,8 @@ class _WishArticlesFeedState extends State<WishArticlesFeed> {
                                     height: manageHeight(context, 150),
                                     width: manageWidth(context, 165),
                                     child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         Icon(
                                           CupertinoIcons
@@ -251,8 +253,6 @@ class _WishArticlesFeedState extends State<WishArticlesFeed> {
                                           textAlign: TextAlign.center,
                                         )
                                       ],
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
                                     ));
                               }),
                             ),
@@ -445,7 +445,7 @@ class _WishArticlesFeedState extends State<WishArticlesFeed> {
                       onPressed: () {
                         value.reduce();
                       },
-                      icon: Icon(CupertinoIcons.minus_circle),
+                      icon: const Icon(CupertinoIcons.minus_circle),
                     ),
                     Text(
                       value.amount.toString(),
@@ -469,7 +469,7 @@ class _WishArticlesFeedState extends State<WishArticlesFeed> {
                           _showOverlay(context);
                         }
                       },
-                      icon: Icon(CupertinoIcons.add_circled),
+                      icon: const Icon(CupertinoIcons.add_circled),
                     ),
                     SizedBox(
                       width: manageWidth(context, 35),
@@ -559,7 +559,7 @@ class _WishArticlesFeedState extends State<WishArticlesFeed> {
                           borderRadius:
                               BorderRadius.circular(manageWidth(context, 10)),
                         ),
-                        child: Icon(
+                        child: const Icon(
                           Icons.add_shopping_cart_rounded,
                           color: Colors.white,
                         ),
@@ -581,7 +581,7 @@ class _WishArticlesFeedState extends State<WishArticlesFeed> {
         stream: FirebaseFirestore.instance.collection('Articles').snapshots(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return SizedBox();
+            return const SizedBox();
           }
           return StreamBuilder(
               stream: FirebaseFirestore.instance
@@ -590,7 +590,7 @@ class _WishArticlesFeedState extends State<WishArticlesFeed> {
                   .snapshots(),
               builder: (context, snapshot2) {
                 if (snapshot2.connectionState == ConnectionState.waiting) {
-                  return SizedBox();
+                  return const SizedBox();
                 }
                 var userData = snapshot2.data!.data();
                 List wishlist = userData!["wishlist"] ?? [];
@@ -661,7 +661,7 @@ class _WishArticlesFeedState extends State<WishArticlesFeed> {
                                 },
                               );
                             },
-                            child: AddToCartButton(),
+                            child: const AddToCartButton(),
                           ),
                         ),
                         Padding(
@@ -694,7 +694,7 @@ class _WishArticlesFeedState extends State<WishArticlesFeed> {
 }
 
 class WishServicesFeed extends StatefulWidget {
-  WishServicesFeed({super.key});
+  const WishServicesFeed({super.key});
 
   @override
   State<WishServicesFeed> createState() => _ServicesFeedState();
@@ -707,7 +707,7 @@ class _ServicesFeedState extends State<WishServicesFeed> {
         stream: FirebaseFirestore.instance.collection('Services').snapshots(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return SizedBox();
+            return const SizedBox();
           }
           return StreamBuilder(
               stream: FirebaseFirestore.instance
@@ -716,7 +716,7 @@ class _ServicesFeedState extends State<WishServicesFeed> {
                   .snapshots(),
               builder: (context, snapshot2) {
                 if (snapshot2.connectionState == ConnectionState.waiting) {
-                  return SizedBox();
+                  return const SizedBox();
                 }
                 var userData = snapshot2.data!.data();
                 List wishlist = userData!["wishlist"] ?? [];

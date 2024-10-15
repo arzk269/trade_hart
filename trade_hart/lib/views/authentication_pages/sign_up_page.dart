@@ -107,7 +107,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     onPressed: () {
                       launchUrl(Uri.parse("https://tradhart.com"));
                     },
-                    child: Text("En savoir plus")),
+                    child: const Text("En savoir plus")),
                 // Bouton pour s'inscrire
                 GestureDetector(
                   onTap: () async {

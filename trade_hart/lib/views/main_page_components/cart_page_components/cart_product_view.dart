@@ -111,7 +111,7 @@ class _CartProductViewState extends State<CartProductView> {
                 Article article = Article(
                     id: snapshot2.data!.id,
                     name: articleData['name'],
-                    price: articleData['price'] * 1.0,
+                    price: articleData['price']*1.0,
                     categories: articleData['category'],
                     sellerId: articleData['sellerId'],
                     amount: articleData['amount'],
@@ -212,12 +212,12 @@ class _CartProductViewState extends State<CartProductView> {
                                       boxShadow: [
                                         BoxShadow(
                                           color: index == data['color index']
-                                              ? Color.fromARGB(
+                                              ? const Color.fromARGB(
                                                   77, 129, 180, 174)
                                               : Colors.grey.withOpacity(0.2),
                                           spreadRadius: 3,
                                           blurRadius: 4,
-                                          offset: Offset(1,
+                                          offset: const Offset(1,
                                               2), // changement de position de l'ombre
                                         ),
                                       ],
@@ -370,7 +370,7 @@ class _CartProductViewState extends State<CartProductView> {
                                     });
                                   }
                                 },
-                                icon: Icon(CupertinoIcons.minus_circle),
+                                icon: const Icon(CupertinoIcons.minus_circle),
                               ),
                               Text(
                                 data['amount'].toString(),
@@ -396,7 +396,7 @@ class _CartProductViewState extends State<CartProductView> {
                                     _showOverlay(context);
                                   }
                                 },
-                                icon: Icon(CupertinoIcons.add_circled),
+                                icon: const Icon(CupertinoIcons.add_circled),
                               ),
                               SizedBox(width: manageWidth(context, 35)),
                             ],
@@ -518,7 +518,7 @@ class _CartProductViewState extends State<CartProductView> {
 
           if (!snapshot.data!.exists) {
             return const SizedBox(
-              height: .05,
+              height: 0.05,
             );
           }
 
@@ -645,7 +645,7 @@ class _CartProductViewState extends State<CartProductView> {
                 Article article = Article(
                     id: data['article id'],
                     name: articleData['name'],
-                    price: articleData['price'],
+                    price: articleData['price']*1.0,
                     categories: articleData['category'],
                     sellerId: articleData['sellerId'],
                     amount: articleData['amount'],
@@ -748,7 +748,7 @@ class _CartProductViewState extends State<CartProductView> {
                                   .update({'amount': FieldValue.increment(-1)});
                             }
                           },
-                          icon: Icon(CupertinoIcons.minus_circle),
+                          icon: const Icon(CupertinoIcons.minus_circle),
                         ),
                         Text(
                           data['amount'].toString(),
@@ -779,7 +779,7 @@ class _CartProductViewState extends State<CartProductView> {
                                   .showSnackBar(snackBar);
                             }
                           },
-                          icon: Icon(CupertinoIcons.add_circled),
+                          icon: const Icon(CupertinoIcons.add_circled),
                         ),
                         GestureDetector(
                           onTap: () {
@@ -791,7 +791,7 @@ class _CartProductViewState extends State<CartProductView> {
                             );
                           },
                           child: Container(
-                            width: manageWidth(context, 105),
+                            width: manageWidth(context, 108),
                             margin:
                                 EdgeInsets.only(left: manageWidth(context, 15)),
                             padding: EdgeInsets.only(

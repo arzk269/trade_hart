@@ -14,7 +14,7 @@ import 'package:trade_hart/views/main_page_components/profile_page_components/us
 
 class ArticleRatePage extends StatefulWidget {
   final Article? article;
-  ArticleRatePage({super.key, this.article});
+  const ArticleRatePage({super.key, this.article});
 
   @override
   State<ArticleRatePage> createState() => _ArticleRatePageState();
@@ -35,17 +35,17 @@ class _ArticleRatePageState extends State<ArticleRatePage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Confirmation'),
-          content: Text('Voulez-vous vraiment supprimer cet élément ?'),
+          title: const Text('Confirmation'),
+          content: const Text('Voulez-vous vraiment supprimer cet élément ?'),
           actions: <Widget>[
             TextButton(
-              child: Text('Annuler'),
+              child: const Text('Annuler'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
             ),
             TextButton(
-              child: Text(
+              child: const Text(
                 'Supprimer',
                 style: TextStyle(color: Colors.red),
               ),
@@ -59,7 +59,7 @@ class _ArticleRatePageState extends State<ArticleRatePage> {
                     .delete();
                 Navigator.of(context).pop();
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
+                  const SnackBar(
                     content: Text('Élément supprimé'),
                     backgroundColor: Colors.red,
                   ),
@@ -74,7 +74,7 @@ class _ArticleRatePageState extends State<ArticleRatePage> {
 
   @override
   void initState() {
-    Future.delayed(Duration(milliseconds: 200), () {
+    Future.delayed(const Duration(milliseconds: 200), () {
       scrollController.jumpTo(scrollController.position.maxScrollExtent);
     });
 
@@ -110,12 +110,12 @@ class _ArticleRatePageState extends State<ArticleRatePage> {
                     .snapshots(),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Center(
+                    return const Center(
                       child: CircularProgressIndicator(),
                     );
                   }
                   if (!snapshot.hasData) {
-                    return SizedBox();
+                    return const SizedBox();
                   }
                   var avis = snapshot.data!.docs;
                   if (articleId != null) {}
@@ -154,7 +154,7 @@ class _ArticleRatePageState extends State<ArticleRatePage> {
 
                                       var user = snapshot.data!;
                                       if (!user.exists) {
-                                        return Text('utilisateur introuvable');
+                                        return const Text('utilisateur introuvable');
                                       }
 
                                       var userData = user.data();
@@ -194,7 +194,7 @@ class _ArticleRatePageState extends State<ArticleRatePage> {
                                                             .format(DateTime
                                                                     .now()
                                                                 .subtract(
-                                                                    Duration(
+                                                                    const Duration(
                                                                         days:
                                                                             1)))
                                                     ? "Hier"
@@ -331,13 +331,13 @@ class _ArticleRatePageState extends State<ArticleRatePage> {
 
                         aviController.clear();
                         // Faire défiler jusqu'à la fin
-                        Future.delayed(Duration(milliseconds: 100), () {
+                        Future.delayed(const Duration(milliseconds: 100), () {
                           scrollController.jumpTo(
                               scrollController.position.maxScrollExtent);
                         });
                       }
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       CupertinoIcons.paperplane,
                       color: AppColors.mainColor,
                     ))

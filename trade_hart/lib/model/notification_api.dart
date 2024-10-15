@@ -20,7 +20,7 @@ Future<void> handleBackgroundMessage(RemoteMessage? message) async {
         var data = message.data;
         navigatorKey.currentState!.pushNamed(data["route"], arguments: data);
       } else {
-        Future.delayed(Duration(microseconds: 100), () {
+        Future.delayed(const Duration(microseconds: 100), () {
           handleBackgroundMessage(message);
         });
       }

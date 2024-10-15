@@ -230,7 +230,7 @@ class _ShopInformationsPageState extends State<ShopInformationsPage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => StripeCreationPage(
+                          builder: (context) => const StripeCreationPage(
                                 businessType: 0,
                               )));
                 });

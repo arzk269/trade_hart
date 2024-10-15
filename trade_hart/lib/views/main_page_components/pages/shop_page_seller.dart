@@ -99,6 +99,8 @@ class _ShopPageSellerState extends State<ShopPageSeller> {
                                       height: manageHeight(context, 150),
                                       width: manageWidth(context, 165),
                                       child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Icon(
                                             CupertinoIcons
@@ -114,8 +116,6 @@ class _ShopPageSellerState extends State<ShopPageSeller> {
                                             textAlign: TextAlign.center,
                                           )
                                         ],
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
                                       ));
                                 }),
                               ),

@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:trade_hart/size_manager.dart';
 // import 'package:trade_hart/views/main_page.dart';
 

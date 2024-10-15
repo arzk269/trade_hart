@@ -8,7 +8,7 @@ import 'package:trade_hart/views/main_page_components/chat_page_components/chat_
 import 'package:trade_hart/views/main_page_components/pages/conversation_page.dart';
 
 class MainChatPage extends StatefulWidget {
-  MainChatPage({super.key});
+  const MainChatPage({super.key});
 
   @override
   State<MainChatPage> createState() => _MainChatPageState();
@@ -216,7 +216,7 @@ class _MainChatPageState extends State<MainChatPage> {
                                               );
                                             } else if (!snapshot2
                                                 .data!.exists) {
-                                              return SizedBox();
+                                              return const SizedBox();
                                             } else if (snapshot2.hasError) {
                                               return Center(
                                                 child: AppBarTitleText(
@@ -238,7 +238,7 @@ class _MainChatPageState extends State<MainChatPage> {
                                                     .startsWith(search
                                                         .toLowerCase()
                                                         .trim())) {
-                                              return SizedBox();
+                                              return const SizedBox();
                                             }
 
                                             if ((talker["user type"] ==
@@ -250,7 +250,7 @@ class _MainChatPageState extends State<MainChatPage> {
                                                     .startsWith(search
                                                         .toLowerCase()
                                                         .trim())) {
-                                              return SizedBox();
+                                              return const SizedBox();
                                             }
 
                                             if ((talker["user type"] ==
@@ -262,7 +262,7 @@ class _MainChatPageState extends State<MainChatPage> {
                                                     .startsWith(search
                                                         .toLowerCase()
                                                         .trim())) {
-                                              return SizedBox();
+                                              return const SizedBox();
                                             }
 
                                             return GestureDetector(
@@ -390,7 +390,7 @@ if(talker.exists){
                                                     .startsWith(search
                                                         .toLowerCase()
                                                         .trim())) {
-                                              return SizedBox();
+                                              return const SizedBox();
                                             }
 
                                             if ((talker["user type"] ==
@@ -402,7 +402,7 @@ if(talker.exists){
                                                     .startsWith(search
                                                         .toLowerCase()
                                                         .trim())) {
-                                              return SizedBox();
+                                              return const SizedBox();
                                             }
 
                                             if ((talker["user type"] ==
@@ -414,7 +414,7 @@ if(talker.exists){
                                                     .startsWith(search
                                                         .toLowerCase()
                                                         .trim())) {
-                                              return SizedBox();
+                                              return const SizedBox();
                                             }
 
                                             return GestureDetector(
@@ -494,7 +494,7 @@ if(talker.exists){
                                               ),
                                             );
 }
-                                            return SizedBox();
+                                            return const SizedBox();
                                           }),
                                     ],
                             );

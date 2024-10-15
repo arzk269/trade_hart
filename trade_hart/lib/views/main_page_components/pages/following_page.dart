@@ -418,6 +418,9 @@ class _FollowingPageState extends State<FollowingPage> {
                                                           width: manageWidth(
                                                               context, 165),
                                                           child: Column(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
                                                             children: [
                                                               Icon(
                                                                 CupertinoIcons
@@ -428,9 +431,6 @@ class _FollowingPageState extends State<FollowingPage> {
                                                                         25),
                                                               ),
                                                             ],
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
                                                           )),
                                                 ),
                                               ),

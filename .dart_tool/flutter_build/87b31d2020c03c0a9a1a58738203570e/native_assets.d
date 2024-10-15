@@ -1,0 +1,1 @@
+ /Users/user243083/trade_hart/.dart_tool/flutter_build/87b31d2020c03c0a9a1a58738203570e/native_assets.yaml: 

@@ -17,7 +17,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class ProviderReservationView extends StatefulWidget {
   final Reservation reservation;
-  ProviderReservationView({super.key, required this.reservation});
+  const ProviderReservationView({super.key, required this.reservation});
 
   @override
   State<ProviderReservationView> createState() =>
@@ -126,7 +126,7 @@ class _ProviderReservationViewState extends State<ProviderReservationView> {
     } catch (error) {
       // Afficher une snackbar en cas d'échec
       // ignore: use_build_context_synchronously
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           content: Text(
               'Une erreur est survenue lors de la confirmation de l\'annulation de cette réservation.',
               style: TextStyle(color: Colors.white)),
@@ -239,7 +239,7 @@ class _ProviderReservationViewState extends State<ProviderReservationView> {
     } catch (error) {
       // Afficher une snackbar en cas d'échec
       // ignore: use_build_context_synchronously
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           content: Text(
               'Une erreur est survenue lors de la confirmation de l\'annulation de cette réservation.',
               style: TextStyle(color: Colors.white)),
@@ -348,7 +348,7 @@ class _ProviderReservationViewState extends State<ProviderReservationView> {
     } catch (error) {
       // Afficher une snackbar en cas d'échec
       // ignore: use_build_context_synchronously
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           content: Text(
               'Une erreur est survenue lors de la confirmation de la fin de cette réservation.',
               style: TextStyle(color: Colors.white)),
@@ -528,6 +528,8 @@ class _ProviderReservationViewState extends State<ProviderReservationView> {
                                                   manageHeight(context, 150),
                                               width: manageWidth(context, 165),
                                               child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
                                                 children: [
                                                   Icon(
                                                     CupertinoIcons
@@ -536,8 +538,6 @@ class _ProviderReservationViewState extends State<ProviderReservationView> {
                                                         context, 20),
                                                   ),
                                                 ],
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
                                               )),
                                     ))),
                           ),
@@ -953,7 +953,7 @@ class _ProviderReservationViewState extends State<ProviderReservationView> {
                                                               ),
                                                             ),
                                                           ),
-                                                          Spacer(),
+                                                          const Spacer(),
                                                           TextButton(
                                                             onPressed: () {
                                                               FirebaseFirestore
@@ -1239,7 +1239,7 @@ class _ProviderReservationViewState extends State<ProviderReservationView> {
                                                                         ]))));
                                                       });
                                                 },
-                                                child: Text(
+                                                child: const Text(
                                                     "Prestation terminée?"),
                                               )
                                             : null,
@@ -1250,7 +1250,7 @@ class _ProviderReservationViewState extends State<ProviderReservationView> {
                           ], // end ListView children
                         ),
                       ),
-                      Divider() // end SizedBox
+                      const Divider() // end SizedBox
                     ], // end Column children
                   );
                 }),

@@ -20,13 +20,13 @@ class CartProductImageView extends StatelessWidget {
                 height: manageHeight(context, 150),
                 width: manageWidth(context, 165),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(
                       CupertinoIcons.exclamationmark_triangle,
                       size: manageWidth(context, 20),
                     ),
                   ],
-                  mainAxisAlignment: MainAxisAlignment.center,
                 )),
           )),
     );
