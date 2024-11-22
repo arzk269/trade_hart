@@ -117,7 +117,6 @@ class _CartPageState extends State<CartPage> {
         ));
 
         Navigator.pop(context);
-        Navigator.pop(context);
       }
     }
   }
