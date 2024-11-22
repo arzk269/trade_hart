@@ -147,8 +147,8 @@ class _EditServicePageState extends State<EditServicePage> {
     serviceData["name to lower case"] = name.toLowerCase();
     serviceData["categories"] = categories;
     serviceData["description"] = description;
-    serviceData["price"] =
-        double.parse((price * 1.13402061).toStringAsFixed(2));
+    serviceData["price"] = double.parse((price * 1.14).toStringAsFixed(2));
+    serviceData['initial price'] = double.parse(price.toStringAsFixed(2));
     serviceData["duration"] = "$duration $timeUnitValue";
     serviceData["images"].addAll(images);
     await FirebaseFirestore.instance
