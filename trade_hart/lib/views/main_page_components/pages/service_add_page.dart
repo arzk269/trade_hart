@@ -58,7 +58,7 @@ class _ServiceAddPageState extends State<ServiceAddPage> {
       if (pickedImage != null) {
         var croppedFile = await ImageCropper().cropImage(
           sourcePath: pickedImage.path,
-          aspectRatio: const CropAspectRatio(ratioX: 11.8, ratioY: 10),
+          aspectRatio: CropAspectRatio(ratioX: 11.8, ratioY: 10),
           compressQuality: 100,
         );
 
@@ -155,7 +155,7 @@ class _ServiceAddPageState extends State<ServiceAddPage> {
           await FirebaseFirestore.instance.collection('Services').add({
         'name to lower case': name.toLowerCase(),
         'name': name,
-        'price': price,
+        'price':  double.parse((price*1.14).toStringAsFixed(2)),
         'categories': categories,
         'sellerId': sellerId,
         'gelocation':  sellerSnapShot.data()!['gelocation'],
@@ -210,7 +210,8 @@ class _ServiceAddPageState extends State<ServiceAddPage> {
           await FirebaseFirestore.instance.collection('Services').add({
         'name to lower case': name.toLowerCase(),
         'name': name[0].toUpperCase() + name.substring(1),
-        'price': price,
+        'price':  double.parse((price*1.14).toStringAsFixed(2)),
+        'initial price':  double.parse(price.toStringAsFixed(2)),
         'categories': categories,
         'sellerId': sellerId,
         'images': serviceImages,
@@ -355,7 +356,7 @@ class _ServiceAddPageState extends State<ServiceAddPage> {
                   margin: EdgeInsets.all(manageWidth(context, 2.5)),
                 ),
               ),
-              const Spacer(),
+              Spacer(),
               GestureDetector(
                 onTap: () {
                   if (images.length == 1) {
@@ -642,7 +643,7 @@ class _ServiceAddPageState extends State<ServiceAddPage> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: value.serviceCategories.isEmpty
-                    ? [const SizedBox()]
+                    ? [SizedBox()]
                     : value.serviceCategories
                         .map((e) => Container(
                               padding: EdgeInsets.fromLTRB(
@@ -657,7 +658,7 @@ class _ServiceAddPageState extends State<ServiceAddPage> {
                                   manageHeight(context, 5)),
                               decoration: BoxDecoration(
                                   border: Border.all(
-                                    color: const Color.fromARGB(255, 180, 92, 159),
+                                    color: Color.fromARGB(255, 180, 92, 159),
                                     width: 1.0, // Épaisseur des bordures
                                   ),
                                   borderRadius: BorderRadius.circular(
@@ -674,7 +675,7 @@ class _ServiceAddPageState extends State<ServiceAddPage> {
                                     child: Icon(CupertinoIcons.clear,
                                         size: manageWidth(context, 18),
                                         color:
-                                            const Color.fromARGB(255, 180, 92, 159)),
+                                            Color.fromARGB(255, 180, 92, 159)),
                                   ),
                                   SizedBox(
                                     width: manageWidth(context, 3),
@@ -685,7 +686,7 @@ class _ServiceAddPageState extends State<ServiceAddPage> {
                                         fontWeight: FontWeight.w400,
                                         fontSize: manageWidth(context, 15),
                                         color:
-                                            const Color.fromARGB(255, 180, 92, 159)),
+                                            Color.fromARGB(255, 180, 92, 159)),
                                   ),
                                 ],
                               )),
@@ -709,7 +710,7 @@ class _ServiceAddPageState extends State<ServiceAddPage> {
                 keyboardType: TextInputType.number,
                 width: manageWidth(context, 205),
               ),
-              const Spacer(),
+              Spacer(),
               DropdownButton(
                 hint: Text(timeUnitValue,
                     style: GoogleFonts.poppins(
@@ -818,7 +819,7 @@ class _ServiceAddPageState extends State<ServiceAddPage> {
                       color: Colors.grey.withOpacity(0.6),
                       borderRadius:
                           BorderRadius.circular(manageWidth(context, 10))),
-                  child: const Center(
+                  child: Center(
                       child: Text(
                     "?",
                     style: TextStyle(color: Colors.white),
@@ -873,7 +874,7 @@ class _ServiceAddPageState extends State<ServiceAddPage> {
                       color: Colors.grey.withOpacity(0.6),
                       borderRadius:
                           BorderRadius.circular(manageWidth(context, 10))),
-                  child: const Center(
+                  child: Center(
                       child: Text(
                     "?",
                     style: TextStyle(color: Colors.white),
