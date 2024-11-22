@@ -234,7 +234,7 @@ class _ProviderStatsPageState extends State<ProviderStatsPage> {
 
       // Préparer le body de la requête
       final body = jsonEncode({
-        'totalAmount': totalAmount,
+        'totalAmount': double.parse(totalAmount.toStringAsFixed(2)),
         'sellerStripeId': sellerStripeId,
       });
 
@@ -1032,7 +1032,7 @@ class _ProviderStatsPageState extends State<ProviderStatsPage> {
                                                                 onPressed: () {
                                                                   createTransfer(
                                                                       element.data()[
-                                                                          "total amount"],
+                                                                          "total amount"]*1.0/1.14,
                                                                       element[
                                                                           "seller stripe id"],
                                                                       element
@@ -1713,3 +1713,4 @@ class _ProviderStatsPageState extends State<ProviderStatsPage> {
     return Container();
   }
 }
+
