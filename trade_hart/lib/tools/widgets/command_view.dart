@@ -108,7 +108,7 @@ class _CommandViewState extends State<CommandView> {
     } catch (error) {
       // Afficher une snackbar en cas d'échec
       // ignore: use_build_context_synchronously
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text('Une erreur est survenue. Veuillez réessayer',
               style: TextStyle(color: Colors.white)),
           backgroundColor: Colors.red));
@@ -139,7 +139,7 @@ class _CommandViewState extends State<CommandView> {
 
     // Préparer le body de la requête
     final body = jsonEncode({
-      'totalAmount': totalAmount,
+      'totalAmount': double.parse(totalAmount.toStringAsFixed(2)),
       'sellerStripeId': sellerStripeId,
     });
 
@@ -306,8 +306,6 @@ class _CommandViewState extends State<CommandView> {
                                     height: manageHeight(context, 150),
                                     width: manageWidth(context, 165),
                                     child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
                                       children: [
                                         Icon(
                                           CupertinoIcons
@@ -315,6 +313,8 @@ class _CommandViewState extends State<CommandView> {
                                           size: manageWidth(context, 20),
                                         ),
                                       ],
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                     )),
                           )),
                     ),
@@ -556,10 +556,10 @@ class _CommandViewState extends State<CommandView> {
                                     builder: (context, snapshot) {
                                       if (snapshot.connectionState ==
                                           ConnectionState.waiting) {
-                                        return const SizedBox();
+                                        return SizedBox();
                                       }
                                       if (!snapshot.data!.exists) {
-                                        return const SizedBox();
+                                        return SizedBox();
                                       }
 
                                       if (snapshot.data!.data()![
@@ -576,7 +576,7 @@ class _CommandViewState extends State<CommandView> {
                                                 ),
                                               );
                                             },
-                                            child: const Text("Evaluer"));
+                                            child: Text("Evaluer"));
                                       }
                                       return TextButton(
                                         onPressed: () {
@@ -782,9 +782,9 @@ class _CommandViewState extends State<CommandView> {
                                                                   // }
 
                                                                   createTransfer(
-                                                                      data["total amount"] +
+                                                                      (data["total amount"] *1.0/1.14 +
                                                                           data[
-                                                                              "delivery fees"],
+                                                                              "delivery fees"]*0.97),
                                                                       data[
                                                                           "seller stripe id"],
                                                                       ref);
@@ -830,7 +830,7 @@ class _CommandViewState extends State<CommandView> {
                                             },
                                           );
                                         },
-                                        child: const Text("Colis reçu?"),
+                                        child: Text("Colis reçu?"),
                                       );
                                     })
                                 : null,
@@ -841,7 +841,7 @@ class _CommandViewState extends State<CommandView> {
                   ],
                 ),
               ),
-              const Divider(),
+              Divider(),
             ], // end Column children
           ),
         );
