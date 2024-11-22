@@ -146,7 +146,7 @@ class _AddArticlePageState extends State<AddArticlePage> {
     deliveryInformations["min delay"] = int.parse(minDelayController.text);
     deliveryInformations["max delay"] = int.parse(maxDelayController.text);
     deliveryInformations["delivery fees"] =
-        double.parse(deliveryFeesController.text);
+       double.parse(double.parse(deliveryFeesController.text).toStringAsFixed(2)) ;
     var sellerSnapShot = await FirebaseFirestore.instance
         .collection('Users')
         .doc(FirebaseAuth.instance.currentUser!.uid)
@@ -158,7 +158,8 @@ class _AddArticlePageState extends State<AddArticlePage> {
     var article = await FirebaseFirestore.instance.collection('Articles').add({
       'name to lower case': name.toLowerCase(),
       'name': name[0].toUpperCase() + name.substring(1),
-      'price': price,
+      'price': double.parse((price*1.14).toStringAsFixed(2)),
+      'initial price' : double.parse(price.toStringAsFixed(2)),
       'category': categories,
       'sellerId': sellerId,
       'images': images,
@@ -213,7 +214,7 @@ class _AddArticlePageState extends State<AddArticlePage> {
       if (pickedImage != null) {
         var croppedFile = await ImageCropper().cropImage(
           sourcePath: pickedImage.path,
-          aspectRatio: const CropAspectRatio(ratioX: 11.8, ratioY: 10),
+          aspectRatio: CropAspectRatio(ratioX: 11.8, ratioY: 10),
           compressQuality: 100,
         );
 
@@ -1157,3 +1158,4 @@ class _AddArticlePageState extends State<AddArticlePage> {
         ])));
   }
 }
+
