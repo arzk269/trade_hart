@@ -76,10 +76,16 @@ class _CartPageState extends State<CartPage> {
           'delivery fees': articleData.data()!['delivery informations']
                           ['delivery fees'] *
                       element['amount'] >
-                  (element['amount'] * article["price"] * 15) / 100.0
-              ? ((element['amount'] * article["price"] * 15) / 100.0).round()
+                  60.0
+              ? 0
               : articleData.data()!['delivery informations']['delivery fees'] *
-                  element['amount'],
+                          element['amount'] >
+                      (element['amount'] * article["price"] * 15) / 100.0
+                  ? ((element['amount'] * article["price"] * 15) / 100.0)
+                      .round()
+                  : articleData.data()!['delivery informations']
+                          ['delivery fees'] *
+                      element['amount'],
           'total amount': element['amount'] * article["price"],
           'article id': articleData.id,
           "payment id": paymentId
@@ -111,7 +117,7 @@ class _CartPageState extends State<CartPage> {
         ));
 
         Navigator.pop(context);
-        
+        Navigator.pop(context);
       }
     }
   }
@@ -133,7 +139,7 @@ class _CartPageState extends State<CartPage> {
     setState(() {});
     try {
       paymentIntent = await createPaymentIntent2(
-        price.round().toString(),
+        price.toString(),
         'EUR',
       );
       await Stripe.instance
@@ -467,13 +473,14 @@ class _CartPageState extends State<CartPage> {
                             articleData.data()!['delivery informations']
                                     ['delivery fees'] *
                                 1.0;
-                        if (fees >
-                            (element['amount'] * artticlePrice * 15) / 100.0) {
+                        if (fees > (artticlePrice * 15) / 100.0) {
                           deliveryfees +=
                               ((element['amount'] * artticlePrice * 15) / 100.0)
                                   .round();
+                        } else if (element['amount'] * artticlePrice > 60.0) {
+                          totalPrice += 0;
                         } else {
-                          deliveryfees += fees;
+                          deliveryfees += fees*element['amount'];
                         }
                         totalPrice += element['amount'] * artticlePrice;
                       }
@@ -482,7 +489,7 @@ class _CartPageState extends State<CartPage> {
                     commandPrice = totalPrice + deliveryfees;
 
                     priceData['total price'] = totalPrice + deliveryfees;
-                    priceData['delivery fees'] = deliveryfees;
+                    priceData['delivery fees'] = double.parse( deliveryfees.toStringAsFixed(2));
 
                     return priceData;
                   }
